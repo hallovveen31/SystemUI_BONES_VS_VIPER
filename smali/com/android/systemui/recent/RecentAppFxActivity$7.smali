@@ -17,7 +17,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
-.field final synthetic val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+.field private final synthetic val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
-    iput-object p2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+    iput-object p2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -41,17 +41,17 @@
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->am:Landroid/app/ActivityManager;
-    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$900(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/app/ActivityManager;
+    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$11(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/app/ActivityManager;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
     iget-object v2, v2, Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;->td:Lcom/android/systemui/recent/TaskDescription;
 
@@ -72,7 +72,7 @@
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->phoneWindow:Landroid/view/Window;
-    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$200(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
+    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$6(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
 
     move-result-object v2
 
@@ -81,7 +81,7 @@
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->phoneWindow:Landroid/view/Window;
-    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$200(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
+    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$6(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
 
     move-result-object v2
 
@@ -93,13 +93,13 @@
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->am:Landroid/app/ActivityManager;
-    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$900(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/app/ActivityManager;
+    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$11(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/app/ActivityManager;
 
     move-result-object v2
 
     invoke-interface {v2}, Landroid/app/HtcIfActivityManager;->skipStartingWindowOnNextActivity()V
 
-    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
     iget-object v2, v2, Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;->td:Lcom/android/systemui/recent/TaskDescription;
 
@@ -110,11 +110,11 @@
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->am:Landroid/app/ActivityManager;
-    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$900(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/app/ActivityManager;
+    invoke-static {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$11(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/app/ActivityManager;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+    iget-object v3, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
     iget-object v3, v3, Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;->td:Lcom/android/systemui/recent/TaskDescription;
 
@@ -127,7 +127,7 @@
     :goto_1
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
-    invoke-virtual {v2}, Landroid/app/Activity;->isFinishing()Z
+    invoke-virtual {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->isFinishing()Z
 
     move-result v2
 
@@ -135,12 +135,12 @@
 
     iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
-    invoke-virtual {v2}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v2}, Lcom/android/systemui/recent/RecentAppFxActivity;->finish()V
 
     goto :goto_0
 
     :cond_4
-    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$holder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
+    iget-object v2, p0, Lcom/android/systemui/recent/RecentAppFxActivity$7;->val$viewHolder:Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;
 
     iget-object v2, v2, Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;->td:Lcom/android/systemui/recent/TaskDescription;
 
@@ -164,21 +164,17 @@
     :catch_0
     move-exception v0
 
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     const-string v2, "RecentApps"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v4, "!!!!!launch activity exception:"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v3
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
     move-result-object v4
 

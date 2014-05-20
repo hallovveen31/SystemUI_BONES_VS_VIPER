@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/IconMerger;
 
-.field final synthetic val$moreRequired:Z
+.field private final synthetic val$moreRequired:Z
 
 
 # direct methods
@@ -44,7 +44,7 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/IconMerger$1;->this$0:Lcom/android/systemui/statusbar/phone/IconMerger;
 
     #getter for: Lcom/android/systemui/statusbar/phone/IconMerger;->mMoreView:Landroid/view/View;
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/IconMerger;->access$000(Lcom/android/systemui/statusbar/phone/IconMerger;)Landroid/view/View;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/IconMerger;->access$0(Lcom/android/systemui/statusbar/phone/IconMerger;)Landroid/view/View;
 
     move-result-object v1
 

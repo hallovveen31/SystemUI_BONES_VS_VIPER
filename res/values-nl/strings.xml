@@ -190,6 +190,7 @@ gecontroleerd worden"</string>
     <string name="quick_settings_volume">Volume</string>
     <string name="quick_settings_usage">Gegevensgebruik</string>
     <string name="quick_settings_sync_all">Alles synchroniseren</string>
+    <string name="quick_settings_ringtone">Beltoon</string>
     <string name="quick_settings_auto_sync">Autosynchronisatie</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Gebruikerskaart</string>
@@ -328,5 +329,4 @@ Datatransmissie is mogelijk bij het laden ongeacht deze instelling.)"</string>
 -Trilfeedback uitschakelen.
 -Dataverbinding uitschakelen wanneer scherm uit staat.
 -Alleen uitvoeren van essentiële apps toestaan."</string>
-    <string name="quick_settings_ringtone">Beltoon</string>
 </resources>

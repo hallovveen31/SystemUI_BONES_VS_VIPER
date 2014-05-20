@@ -213,7 +213,7 @@
     goto/16 :goto_0
 
     :pswitch_8
-    const v9, 0x7f04001e
+    const v9, 0x7f040043
 
     invoke-virtual {p1, v9, p2, v10}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -226,7 +226,7 @@
     invoke-virtual {p2, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     :cond_8
-    const-string v9, "flashlight "
+    const-string v9, "ringtone "
 
     goto/16 :goto_0
 

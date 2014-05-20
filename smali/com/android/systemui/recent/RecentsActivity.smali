@@ -11,6 +11,24 @@
 .end annotation
 
 
+# static fields
+.field public static final CANCEL_PRELOAD_INTENT:Ljava/lang/String; = "com.android.systemui.recent.CANCEL_PRELOAD"
+
+.field public static final CLOSE_RECENTS_INTENT:Ljava/lang/String; = "com.android.systemui.recent.action.CLOSE"
+
+.field public static final PRELOAD_INTENT:Ljava/lang/String; = "com.android.systemui.recent.action.PRELOAD"
+
+.field public static final PRELOAD_PERMISSION:Ljava/lang/String; = "com.android.systemui.recent.permission.PRELOAD"
+
+.field public static final TOGGLE_RECENTS_INTENT:Ljava/lang/String; = "com.android.systemui.recent.action.TOGGLE_RECENTS"
+
+.field public static final WAITING_FOR_WINDOW_ANIMATION_PARAM:Ljava/lang/String; = "com.android.systemui.recent.WAITING_FOR_WINDOW_ANIMATION"
+
+.field private static final WAS_SHOWING:Ljava/lang/String; = "was_showing"
+
+.field public static final WINDOW_ANIMATION_START_INTENT:Ljava/lang/String; = "com.android.systemui.recent.action.WINDOW_ANIMATION_START"
+
+
 # instance fields
 .field private mForeground:Z
 
@@ -38,7 +56,7 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/systemui/recent/RecentsActivity;)Lcom/android/systemui/recent/RecentsPanelView;
+.method static synthetic access$0(Lcom/android/systemui/recent/RecentsActivity;)Lcom/android/systemui/recent/RecentsPanelView;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
@@ -46,7 +64,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/recent/RecentsActivity;)Z
+.method static synthetic access$1(Lcom/android/systemui/recent/RecentsActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mShowing:Z
@@ -54,7 +72,7 @@
     return v0
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/recent/RecentsActivity;)Z
+.method static synthetic access$2(Lcom/android/systemui/recent/RecentsActivity;)Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mForeground:Z
@@ -158,6 +176,20 @@
     goto :goto_0
 .end method
 
+.method private showFullscreen()V
+    .locals 2
+
+    const/16 v1, 0x400
+
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1, v1}, Landroid/view/Window;->setFlags(II)V
+
+    return-void
+.end method
+
 .method private updateWallpaperVisibility(Z)V
     .locals 4
 
@@ -168,7 +200,7 @@
     move v1, v2
 
     :goto_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -182,7 +214,7 @@
 
     if-eq v1, v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
@@ -210,7 +242,7 @@
 
     const-string v2, "activity"
 
-    invoke-virtual {p0, v2}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v2}, Lcom/android/systemui/recent/RecentsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -257,7 +289,7 @@
     invoke-virtual {v2, v3}, Lcom/android/systemui/recent/RecentsPanelView;->show(Z)V
 
     :cond_1
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->finish()V
 
     goto :goto_0
 .end method
@@ -291,7 +323,7 @@
 
     invoke-direct {v1, v2}, Landroid/os/UserHandle;-><init>(I)V
 
-    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/systemui/recent/RecentsActivity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
     iget-object v1, p0, Lcom/android/systemui/recent/RecentsActivity;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
@@ -311,6 +343,14 @@
     return v0
 .end method
 
+.method isForeground()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mForeground:Z
+
+    return v0
+.end method
+
 .method public onBackPressed()V
     .locals 0
 
@@ -322,7 +362,9 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
 
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-direct {p0}, Lcom/android/systemui/recent/RecentsActivity;->showFullscreen()V
+
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
@@ -332,11 +374,11 @@
 
     const v1, 0x7f04006e
 
-    invoke-virtual {p0, v1}, Landroid/app/Activity;->setContentView(I)V
+    invoke-virtual {p0, v1}, Lcom/android/systemui/recent/RecentsActivity;->setContentView(I)V
 
     const v1, 0x7f07008d
 
-    invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lcom/android/systemui/recent/RecentsActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -352,13 +394,13 @@
 
     invoke-direct {v2, p0, v3}, Lcom/android/systemui/recent/RecentsActivity$TouchOutsideListener;-><init>(Lcom/android/systemui/recent/RecentsActivity;Lcom/android/systemui/statusbar/StatusBarPanel;)V
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentsPanelView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     iget-object v1, p0, Lcom/android/systemui/recent/RecentsActivity;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
     const/16 v2, 0x700
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
+    invoke-virtual {v1, v2}, Lcom/android/systemui/recent/RecentsPanelView;->setSystemUiVisibility(I)V
 
     invoke-static {p0}, Lcom/android/systemui/recent/RecentTasksLoader;->getInstance(Landroid/content/Context;)Lcom/android/systemui/recent/RecentTasksLoader;
 
@@ -372,7 +414,7 @@
 
     iget-object v1, p0, Lcom/android/systemui/recent/RecentsActivity;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
 
-    invoke-virtual {p0}, Landroid/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -401,7 +443,7 @@
     if-eqz v1, :cond_1
 
     :cond_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Lcom/android/systemui/recent/RecentsActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
 
@@ -435,7 +477,7 @@
 
     iget-object v2, p0, Lcom/android/systemui/recent/RecentsActivity;->mIntentFilter:Landroid/content/IntentFilter;
 
-    invoke-virtual {p0, v1, v2}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {p0, v1, v2}, Lcom/android/systemui/recent/RecentsActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -462,7 +504,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {p0, v0}, Lcom/android/systemui/recent/RecentsActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
@@ -486,21 +528,12 @@
 
     const v1, 0x7f050010
 
-    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/systemui/recent/RecentsActivity;->overridePendingTransition(II)V
 
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mForeground:Z
 
-    iget-object v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/recent/RecentsActivity;->mRecentsPanel:Lcom/android/systemui/recent/RecentsPanelView;
-
-    invoke-virtual {v0}, Lcom/android/systemui/recent/RecentsPanelView;->dismissContextMenuIfAny()V
-
-    :cond_0
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
     return-void

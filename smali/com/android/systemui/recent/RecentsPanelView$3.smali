@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/recent/RecentsPanelView;
 
-.field final synthetic val$thumbnailView:Landroid/view/View;
+.field private final synthetic val$thumbnailView:Landroid/view/View;
 
 
 # direct methods
@@ -52,7 +52,7 @@
     const/4 v1, 0x0
 
     #setter for: Lcom/android/systemui/recent/RecentsPanelView;->mPopup:Landroid/widget/PopupMenu;
-    invoke-static {v0, v1}, Lcom/android/systemui/recent/RecentsPanelView;->access$1102(Lcom/android/systemui/recent/RecentsPanelView;Landroid/widget/PopupMenu;)Landroid/widget/PopupMenu;
+    invoke-static {v0, v1}, Lcom/android/systemui/recent/RecentsPanelView;->access$12(Lcom/android/systemui/recent/RecentsPanelView;Landroid/widget/PopupMenu;)V
 
     return-void
 .end method

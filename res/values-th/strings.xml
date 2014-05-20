@@ -189,6 +189,7 @@
     <string name="quick_settings_volume">ปริมาตร</string>
     <string name="quick_settings_usage">การใช้ข้อมูล</string>
     <string name="quick_settings_sync_all">ซิงค์ทั้งหมด</string>
+    <string name="quick_settings_ringtone">เสียงเรียกเข้า</string>
     <string name="quick_settings_auto_sync">ซิงค์อัตโนมัติ</string>
     <string name="quick_settings_bluetooth">บลูทูธ</string>
     <string name="quick_settings_user_card">การ์ดสำหรับผู้ใช้</string>
@@ -327,5 +328,4 @@
 -ปิดฟีดแบ็กระบบสั่น
 -ปิดใช้การเชื่อมต่อข้อมูลเมื่อปิดหน้าจอ
 -อนุญาตให้ใช้งานเฉพาะแอพพลิเคชันที่จำเป็นเท่านั้น"</string>
-    <string name="quick_settings_ringtone">เสียงเรียกเข้า</string>
 </resources>

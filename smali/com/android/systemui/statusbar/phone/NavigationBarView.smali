@@ -1846,8 +1846,6 @@
 
     if-ne v0, p1, :cond_0
 
-    if-eq v0, p1, :cond_0
-
     :goto_0
     return-void
 
@@ -1860,11 +1858,19 @@
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarView;->mShowMenu:Z
 
-    const/4 v0, 0x1
+    if-eqz v0, :cond_1
 
+    const/4 v0, 0x0
+
+    :goto_1
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x4
+
+    goto :goto_1
 .end method
 
 .method public setNavigationIconHints(I)V

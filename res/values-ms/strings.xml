@@ -190,6 +190,7 @@ dipantau"</string>
     <string name="quick_settings_volume">Kelantangan</string>
     <string name="quick_settings_usage">Penggunaan Data</string>
     <string name="quick_settings_sync_all">Segerakkan Semua</string>
+    <string name="quick_settings_ringtone">Nada Dering</string>
     <string name="quick_settings_auto_sync">Auto Segerak</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">User Card</string>
@@ -328,5 +329,4 @@ dipantau"</string>
 -Mematikan maklum balas getaran.
 -Mematikan sambungan data semasa skrin dimatikan.
 -Hanya membenarkan apl penting sahaja dijalankan."</string>
-    <string name="quick_settings_ringtone">Nada Dering</string>
 </resources>

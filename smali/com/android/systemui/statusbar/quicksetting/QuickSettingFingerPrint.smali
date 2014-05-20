@@ -61,7 +61,7 @@
 .method public static getQSIconID()I
     .locals 1
 
-    const v0, 0x7f020526
+    const v0, 0x7f020129
 
     return v0
 .end method

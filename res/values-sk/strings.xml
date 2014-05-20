@@ -190,6 +190,7 @@ monitorovaná"</string>
     <string name="quick_settings_volume">Hlasitosť</string>
     <string name="quick_settings_usage">Využitie dát</string>
     <string name="quick_settings_sync_all">Synchronizovať všetko</string>
+    <string name="quick_settings_ringtone">Vyzváňací tón</string>
     <string name="quick_settings_auto_sync">Automatická synchronizácia</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Karta používateľa</string>
@@ -328,5 +329,4 @@ monitorovaná"</string>
 –Vypne sa odozva vibrovaním.
 –Vypne sa dátové pripojenie, keď je obrazovka vypnutá.
 –V činnosti sú len nevyhnutné aplikácie."</string>
-    <string name="quick_settings_ringtone">Vyzváňací tón</string>
 </resources>

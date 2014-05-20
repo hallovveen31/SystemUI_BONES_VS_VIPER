@@ -191,6 +191,7 @@
     <string name="quick_settings_volume">音量</string>
     <string name="quick_settings_usage">データ使用量</string>
     <string name="quick_settings_sync_all">すべてを同期</string>
+    <string name="quick_settings_ringtone">着信音</string>
     <string name="quick_settings_auto_sync">自動的に同期</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">ユーザー カード</string>
@@ -329,5 +330,4 @@
 -バイブレーション フィードバックを切る。
 -スクリーンが消えているときにはデータ接続を切る。
 -必要なアプリだけを有効にする。"</string>
-    <string name="quick_settings_ringtone">着信音</string>
 </resources>

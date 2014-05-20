@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">עוצמת שמע</string>
     <string name="quick_settings_usage">שימוש בתקשורת נתונים</string>
     <string name="quick_settings_sync_all">סנכרן הכל</string>
+    <string name="quick_settings_ringtone">צלצול</string>
     <string name="quick_settings_auto_sync">סנכרון אוטומטי</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">כרטיס משתמש</string>
@@ -282,5 +283,4 @@
     <string name="extreme_auto_power_saver_ask_msg_ex5">הפעלת מצב חיסכון בחשמל מאריכה את תוחלת חיי הסוללה על ידי:nחיסכון בשימוש במעבד.nהפחתת בהירות המסך.nכיבוי משוב הרטט.nכיבוי החיבור לרשת נתונים כשמסך כבוי.nהשבתת אפליקציות כך שרק אפליקציות חיוניות יפעלו.</string>
     <string name="extreme_auto_power_saver_ask_title_ex6">מצב חיסכון חכם בחשמל</string>
     <string name="extreme_auto_power_saver_ask_msg_ex6">הפעלת מצב חיסכון חכם בחשמל מאריכה את תוחלת חיי הסוללה על ידי:nחיסכון בשימוש במעבד.nהפחתת בהירות המסך.nכיבוי משוב הרטט.nכיבוי החיבור לרשת נתונים כשמסך כבוי.nהשבתת אפליקציות כך שרק אפליקציות חיוניות יפעלו.</string>
-    <string name="quick_settings_ringtone">צלצול</string>
 </resources>

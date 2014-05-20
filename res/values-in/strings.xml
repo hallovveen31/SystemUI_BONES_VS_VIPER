@@ -189,6 +189,7 @@ Jika Anda mengaktifkan ulang data, mungkin Anda akan dikenai biaya oleh operator
     <string name="quick_settings_volume">Volume</string>
     <string name="quick_settings_usage">Penggunaan Data</string>
     <string name="quick_settings_sync_all">Sinkronkan Semua</string>
+    <string name="quick_settings_ringtone">Nada dering</string>
     <string name="quick_settings_auto_sync">Sinkronisasi Otomatis</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Kartu Pengguna</string>
@@ -327,5 +328,4 @@ Jika Anda mengaktifkan ulang data, mungkin Anda akan dikenai biaya oleh operator
 -Mematikan umpan balik getaran.
 -Mematikan data sambungan data ketika layar mati.
 -Hanya memungkinkan aplikasi penting untuk berjalan."</string>
-    <string name="quick_settings_ringtone">Nada dering</string>
 </resources>

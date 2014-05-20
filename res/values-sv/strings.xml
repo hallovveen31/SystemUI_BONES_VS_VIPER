@@ -190,6 +190,7 @@ Om du återaktiverar data kommer du att debiteras av operatören."</string>
     <string name="quick_settings_volume">Volym</string>
     <string name="quick_settings_usage">Dataanvändning</string>
     <string name="quick_settings_sync_all">Synkronisera alla</string>
+    <string name="quick_settings_ringtone">Ringsignal</string>
     <string name="quick_settings_auto_sync">Automatisk synkronisering</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Användarkort</string>
@@ -328,5 +329,4 @@ Om du återaktiverar data kommer du att debiteras av operatören."</string>
 -Stänga av vibrationsfeedback.
 -Stänga av dataanslutning när skärmen är avstängd.
 -Endast låta viktiga program köras."</string>
-    <string name="quick_settings_ringtone">Ringsignal</string>
 </resources>

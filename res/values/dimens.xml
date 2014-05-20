@@ -60,7 +60,7 @@
     <dimen name="notification_panel_margin_left">0.0dip</dimen>
     <item type="dimen" name="settings_panel_dragzone_fraction">0.0%</item>
     <dimen name="settings_panel_dragzone_min">100.0dip</dimen>
-    <dimen name="carrier_label_height">0.0dip</dimen>
+    <dimen name="carrier_label_height">24.0dip</dimen>
     <dimen name="one_finger_pop_limit">32.0dip</dimen>
     <dimen name="quick_settings_cell_height">110.0dip</dimen>
     <dimen name="quick_settings_cell_gap">4.0dip</dimen>

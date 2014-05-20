@@ -190,6 +190,7 @@ jälgida"</string>
     <string name="quick_settings_volume">Helitugevus</string>
     <string name="quick_settings_usage">Andmekasutus</string>
     <string name="quick_settings_sync_all">Sünkrooni kõik</string>
+    <string name="quick_settings_ringtone">Helin</string>
     <string name="quick_settings_auto_sync">Automaatne sünkroonimine</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Kasutajakaart</string>
@@ -328,5 +329,4 @@ jälgida"</string>
 - lülitades välja värintagasiside;
 - lülitades välja andmesideühenduse, kui ekraan on välja lülitatud;
 - lubades töötada ainult hädavajalikel rakendustel."</string>
-    <string name="quick_settings_ringtone">Helin</string>
 </resources>

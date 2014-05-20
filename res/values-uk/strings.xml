@@ -189,6 +189,7 @@
     <string name="quick_settings_volume">Гучність</string>
     <string name="quick_settings_usage">Використання даних</string>
     <string name="quick_settings_sync_all" />
+    <string name="quick_settings_ringtone" />
     <string name="quick_settings_auto_sync">Автоматична синхронізація</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Карта користувача</string>
@@ -327,5 +328,4 @@
 -Вимкнення вібрації.
 -Вимкнення з'єднання для передавання даних, коли екран вимкнено.
 -Дозволу запускати тільки важливі програми."</string>
-    <string name="quick_settings_ringtone" />
 </resources>

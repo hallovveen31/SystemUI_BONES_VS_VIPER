@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">میزان صدا</string>
     <string name="quick_settings_usage">مصرف داده</string>
     <string name="quick_settings_sync_all">همگام سازی همه</string>
+    <string name="quick_settings_ringtone">زنگ تماس</string>
     <string name="quick_settings_auto_sync">همگام سازی خودکار</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">کارت کاربر</string>
@@ -328,5 +329,4 @@
 -خاموش کردن بازخورد لرزشی.
 -وقتی صفحه نمایش خاموش شد اتصال داده غیرفعال می شود.
 -فقط اجازه اجرا به برنامه های ضروری داده شود."</string>
-    <string name="quick_settings_ringtone">زنگ تماس</string>
 </resources>

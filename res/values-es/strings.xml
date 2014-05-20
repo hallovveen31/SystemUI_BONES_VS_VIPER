@@ -190,6 +190,7 @@ esté siendo controlada"</string>
     <string name="quick_settings_volume">Volumen</string>
     <string name="quick_settings_usage">Uso de datos</string>
     <string name="quick_settings_sync_all">Sincronizar todo</string>
+    <string name="quick_settings_ringtone">Tono de llamada</string>
     <string name="quick_settings_auto_sync">Sincronización automática</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Tarjeta de usuario</string>
@@ -328,5 +329,4 @@ esté siendo controlada"</string>
 -Desactivando la respuesta con vibración.
 -Desactivando la conexión de datos cuando la pantalla esté apagada.
 -Permitiendo que solo se ejecuten aplicaciones esenciales."</string>
-    <string name="quick_settings_ringtone">Tono de llamada</string>
 </resources>

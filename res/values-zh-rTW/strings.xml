@@ -192,6 +192,7 @@
     <string name="quick_settings_volume">音量</string>
     <string name="quick_settings_usage">數據使用量</string>
     <string name="quick_settings_sync_all">全部同步</string>
+    <string name="quick_settings_ringtone">鈴聲</string>
     <string name="quick_settings_auto_sync">自動同步</string>
     <string name="quick_settings_bluetooth">藍牙</string>
     <string name="quick_settings_user_card">使用者卡片</string>
@@ -281,8 +282,8 @@
 -關閉震動回應。
 -螢幕關閉時關閉數據連線。
 -僅允許必要的應用程式執行。"</string>
-    <string name="extreme_auto_power_saver_ask_title_ex1">極致省電</string>
-    <string name="extreme_auto_power_saver_ask_msg_ex1">"以下列方式開啟極致省電將延長電池使用時間：
+    <string name="extreme_auto_power_saver_ask_title_ex1">極緻省電</string>
+    <string name="extreme_auto_power_saver_ask_msg_ex1">"以下列方式開啟極緻省電將延長電池使用時間：
 -節省 CPU 使用量。
 -降低螢幕亮度。
 -關閉震動回應。
@@ -330,5 +331,4 @@
 -關閉震動回應。
 -螢幕關閉時關閉數據連線。
 -僅允許必要的應用程式執行。"</string>
-    <string name="quick_settings_ringtone">鈴聲</string>
 </resources>

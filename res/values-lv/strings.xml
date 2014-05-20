@@ -190,6 +190,7 @@ pārraudzīts"</string>
     <string name="quick_settings_volume">Skaļums</string>
     <string name="quick_settings_usage">Datu lietošana</string>
     <string name="quick_settings_sync_all">Sinhronizēt visu</string>
+    <string name="quick_settings_ringtone">Zvana signāls</string>
     <string name="quick_settings_auto_sync">Automātiskā sinhronizācija</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Lietotāja karte</string>
@@ -328,5 +329,4 @@ pārraudzīts"</string>
 -izslēdzot vibrācijas reakciju;
 -izslēdzot datu savienojumu, kad ekrāns ir izslēgts;
 -ļaujot darboties tikai svarīgākajām lietojumprogrammām."</string>
-    <string name="quick_settings_ringtone">Zvana signāls</string>
 </resources>

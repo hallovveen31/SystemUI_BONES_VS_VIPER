@@ -192,6 +192,7 @@
     <string name="quick_settings_volume">Обем</string>
     <string name="quick_settings_usage">Използване на данни</string>
     <string name="quick_settings_sync_all">Синхронизация на всички</string>
+    <string name="quick_settings_ringtone">Мелодия на звънене</string>
     <string name="quick_settings_auto_sync">Автоматична синхронизация</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Потребителска карта</string>
@@ -330,5 +331,4 @@
 -Изключва обратната връзка чрез вибрация.
 -Изключва връзката за данни, когато екранът е изключен.
 -Позволява изпълнението само на важните приложения."</string>
-    <string name="quick_settings_ringtone">Мелодия на звънене</string>
 </resources>

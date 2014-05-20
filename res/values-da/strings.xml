@@ -190,6 +190,7 @@ være overvåget"</string>
     <string name="quick_settings_volume">Lydstyrke</string>
     <string name="quick_settings_usage">Databrug</string>
     <string name="quick_settings_sync_all">Synkroniser alt</string>
+    <string name="quick_settings_ringtone">Ringetone</string>
     <string name="quick_settings_auto_sync">Automatisk synkronisering</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Brugerkort</string>
@@ -328,5 +329,4 @@ være overvåget"</string>
 -Slå vibrationsfeedback fra.
 -Slå dataforbindelsen fra, når skærmen er slukket.
 -Kun at tillade de mest nødvendige programmer at køre."</string>
-    <string name="quick_settings_ringtone">Ringetone</string>
 </resources>

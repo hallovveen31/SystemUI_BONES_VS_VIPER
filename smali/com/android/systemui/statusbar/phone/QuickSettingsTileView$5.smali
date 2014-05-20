@@ -68,7 +68,6 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QuickSettingsTileView$5;->this$0:Lcom/android/systemui/statusbar/phone/QuickSettingsTileView;
 
-    #getter for: Landroid/view/View;->mContext:Landroid/content/Context;
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/QuickSettingsTileView;->access$100(Lcom/android/systemui/statusbar/phone/QuickSettingsTileView;)Landroid/content/Context;
 
     move-result-object v1

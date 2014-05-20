@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;-><init>(Landroid/content/Context;Landroid/app/StatusBarManager;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -42,13 +42,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "onReceiver: aciton="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -73,12 +69,12 @@
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController$1;->this$0:Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;
 
     #getter for: Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->mGpsSetting:I
-    invoke-static {v2}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$000(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)I
+    invoke-static {v2}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$2(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)I
 
     move-result v2
 
     #calls: Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->saveState(Landroid/content/Context;I)V
-    invoke-static {v1, p1, v2}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$100(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;Landroid/content/Context;I)V
+    invoke-static {v1, p1, v2}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$3(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;Landroid/content/Context;I)V
 
     :cond_0
     return-void

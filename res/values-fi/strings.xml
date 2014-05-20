@@ -190,6 +190,7 @@ valvoa"</string>
     <string name="quick_settings_volume">Äänenvoimakkuus</string>
     <string name="quick_settings_usage">Datan käyttö</string>
     <string name="quick_settings_sync_all">Synkronoi kaikki</string>
+    <string name="quick_settings_ringtone">Soittoääni</string>
     <string name="quick_settings_auto_sync">Automaattinen synkronointi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Käyttäjäkortti</string>
@@ -328,5 +329,4 @@ valvoa"</string>
 -Värinäpalautteen kytkeminen pois päältä.
 -Datayhteyden kytkeminen pois päältä, kun näyttö on pois päältä.
 -Vain oleellisten sovellusten salliminen."</string>
-    <string name="quick_settings_ringtone">Soittoääni</string>
 </resources>

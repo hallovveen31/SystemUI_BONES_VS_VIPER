@@ -190,6 +190,7 @@ biti nadzirana"</string>
     <string name="quick_settings_volume">Glasnoća</string>
     <string name="quick_settings_usage">Uporaba podataka</string>
     <string name="quick_settings_sync_all">Sinkroniziraj sve</string>
+    <string name="quick_settings_ringtone">Melodija zvona</string>
     <string name="quick_settings_auto_sync">Automatska sinkronizacija</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Korisnička kartica</string>
@@ -327,5 +328,4 @@ biti nadzirana"</string>
 -Isključivanjem odziva vibracijom.
 -Isključivanjem podatkovne veze kad je zaslon isključen.
 -Ostavljanjem u radu samo neophodnih aplikacija."</string>
-    <string name="quick_settings_ringtone">Melodija zvona</string>
 </resources>

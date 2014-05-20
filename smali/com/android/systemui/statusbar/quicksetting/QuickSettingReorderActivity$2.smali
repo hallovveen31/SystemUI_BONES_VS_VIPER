@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 452
     iput-object p1, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$2;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public getDividerType(I)I
     .locals 2
+    .parameter "position"
 
+    .prologue
+    .line 455
     iget-object v0, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$2;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     #getter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->separatorIndex:I
@@ -69,9 +75,11 @@
 
     if-ne p1, v0, :cond_2
 
+    .line 456
     :cond_1
     const/4 v0, 0x0
 
+    .line 458
     :goto_0
     return v0
 

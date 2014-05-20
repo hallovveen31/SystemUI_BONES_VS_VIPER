@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">Ուժգնություն</string>
     <string name="quick_settings_usage">Տվյալների օգտագործում</string>
     <string name="quick_settings_sync_all">Համաժամել բոլորը</string>
+    <string name="quick_settings_ringtone">Ձայներանգ</string>
     <string name="quick_settings_auto_sync">Ինքնահամաժամեցում</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Օգտվողի քարտ</string>
@@ -328,5 +329,4 @@
 -Անջատելով թրթռման արձագանքը:
 -Անջատելով տվյալների կապակցումը, երբ էկրանն անջատած է:
 -Թույլատրելով միայն անհրաժեշտ գործադիրների օգտագործումը:"</string>
-    <string name="quick_settings_ringtone">Ձայներանգ</string>
 </resources>

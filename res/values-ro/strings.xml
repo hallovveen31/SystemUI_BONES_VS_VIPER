@@ -190,6 +190,7 @@ fi monitorizată"</string>
     <string name="quick_settings_volume">Volum</string>
     <string name="quick_settings_usage">Utilizarea datelor</string>
     <string name="quick_settings_sync_all">Sincronizare toate</string>
+    <string name="quick_settings_ringtone">Ton de apel</string>
     <string name="quick_settings_auto_sync">Sincronizare automată</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Card utilizator</string>
@@ -328,5 +329,4 @@ fi monitorizată"</string>
 -Dezactivarea feedbackului cu vibraţie.
 -Dezactivarea conexiunii de date când ecranul este stins.
 -Permiterea rulării numai a aplicaţiilor esenţiale."</string>
-    <string name="quick_settings_ringtone">Ton de apel</string>
 </resources>

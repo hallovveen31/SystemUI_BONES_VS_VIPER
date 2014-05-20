@@ -42,17 +42,17 @@
     const/4 v1, 0x0
 
     #setter for: Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->mDuringAnimation:Z
-    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->access$1302(Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;Z)Z
+    invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->access$14(Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;Z)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController$4;->this$0:Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;
 
     #calls: Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->updateDataNetType()V
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->access$400(Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->access$4(Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController$4;->this$0:Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;
 
     #calls: Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->updateDataIcon()V
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->access$500(Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->access$5(Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController$4;->this$0:Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;
 

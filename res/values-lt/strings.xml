@@ -192,6 +192,7 @@ būti stebimas"</string>
     <string name="quick_settings_volume">Garsumas</string>
     <string name="quick_settings_usage">Duomenų naudojimas</string>
     <string name="quick_settings_sync_all">Sinchronizuoti visus</string>
+    <string name="quick_settings_ringtone">Skambėjimo garsas</string>
     <string name="quick_settings_auto_sync">Automatinis sinchronizavimas</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Vartotojo kortelė</string>
@@ -330,5 +331,4 @@ būti stebimas"</string>
 -Išjungiamas vibracijos grįžtamasis ryšys.
 -Išjungiamas duomenų ryšys, kai ekranas išjungtas.
 -Leidžiama veikti tik esminėms programoms."</string>
-    <string name="quick_settings_ringtone">Skambėjimo garsas</string>
 </resources>

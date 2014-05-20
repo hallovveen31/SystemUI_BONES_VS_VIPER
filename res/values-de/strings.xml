@@ -190,6 +190,7 @@ Wenn Sie die Daten neu aktivieren, werden dafür möglicherweise vom Netzbetreib
     <string name="quick_settings_volume">Lautstärke</string>
     <string name="quick_settings_usage">Datennutzung</string>
     <string name="quick_settings_sync_all">Alle synchronisieren</string>
+    <string name="quick_settings_ringtone">Klingelton</string>
     <string name="quick_settings_auto_sync">Autom. Synchronisierung</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Benutzerkarte</string>
@@ -327,5 +328,4 @@ Wenn Sie die Daten neu aktivieren, werden dafür möglicherweise vom Netzbetreib
 -Deaktivierung von Vibrationsfeedback.
 -Deaktivierung der Datenverbindung, wenn der Bildschirm ausgeschaltet ist.
 -Nur dringend benötigte Apps werden ausgeführt."</string>
-    <string name="quick_settings_ringtone">Klingelton</string>
 </resources>

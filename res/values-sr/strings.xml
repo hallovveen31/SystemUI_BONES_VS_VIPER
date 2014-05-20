@@ -190,6 +190,7 @@ da se nadgleda"</string>
     <string name="quick_settings_volume">Jačina zvuka</string>
     <string name="quick_settings_usage">Korišćenje podataka</string>
     <string name="quick_settings_sync_all">Sinhronizuj sve</string>
+    <string name="quick_settings_ringtone">Ton zvona</string>
     <string name="quick_settings_auto_sync">Automatska sinhronizacija</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Korisnička kartica</string>
@@ -328,5 +329,4 @@ da se nadgleda"</string>
 -Isključivanje vibracije kao reakcije.
 -Isključivanje veze za prenos podataka kada je ekran isključen.
 -Dozvolite samo aplikacijama od suštinske važnosti da rade."</string>
-    <string name="quick_settings_ringtone">Ton zvona</string>
 </resources>

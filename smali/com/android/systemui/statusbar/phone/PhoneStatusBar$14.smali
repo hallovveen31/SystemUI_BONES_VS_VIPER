@@ -48,5 +48,11 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar$14;->this$0:Lcom/android/systemui/statusbar/phone/PhoneStatusBar;
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBar;->mVenomStatusBarExtension:Lcom/android/systemui/statusbar/phone/VenomStatusBarExtension;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/VenomStatusBarExtension;->checkQSTabs()V
+
     return-void
 .end method

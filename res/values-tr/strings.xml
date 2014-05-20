@@ -191,6 +191,7 @@ Verileri tekrar etkinleştirirseniz, operatör tarafından ücretlendirilebilirs
     <string name="quick_settings_volume">Ses</string>
     <string name="quick_settings_usage">Veri Kullanımı</string>
     <string name="quick_settings_sync_all">Tümünü eşitle</string>
+    <string name="quick_settings_ringtone">Zil sesi</string>
     <string name="quick_settings_auto_sync">Otomatik Eşitleme</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Kullanıcı Kartı</string>
@@ -329,5 +330,4 @@ Verileri tekrar etkinleştirirseniz, operatör tarafından ücretlendirilebilirs
 -Titreşimli geri bildirimi kapatarak.
 -Ekran kapalıyken veri bağlantısını kapatarak.
 -Yalnızca gerekli uygulamaların çalışmasını sağlayarak."</string>
-    <string name="quick_settings_ringtone">Zil sesi</string>
 </resources>

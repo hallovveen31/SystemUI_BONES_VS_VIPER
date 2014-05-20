@@ -41,7 +41,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/android/systemui/recent/RecentAppFxActivity;Lcom/android/systemui/recent/RecentAppFxActivity$1;)V
+.method synthetic constructor <init>(Lcom/android/systemui/recent/RecentAppFxActivity;Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/recent/RecentAppFxActivity$ViewHolder;-><init>(Lcom/android/systemui/recent/RecentAppFxActivity;)V

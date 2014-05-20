@@ -190,6 +190,7 @@ ser monitorizada"</string>
     <string name="quick_settings_volume">Volume</string>
     <string name="quick_settings_usage">Utilização de dados</string>
     <string name="quick_settings_sync_all">Sincronizar tudo</string>
+    <string name="quick_settings_ringtone">Toque</string>
     <string name="quick_settings_auto_sync">Sincronização automática</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Cartão de utilizador</string>
@@ -328,5 +329,4 @@ ser monitorizada"</string>
 -Desligar do feedback por vibração.
 -Desligar a ligação de dados quando o ecrã está desligado.
 -Permitir apenas executar aplicações essenciais."</string>
-    <string name="quick_settings_ringtone">Toque</string>
 </resources>

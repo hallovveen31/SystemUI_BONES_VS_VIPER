@@ -11,26 +11,16 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0c0017
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mIconSize:I
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/IconMerger;->setStatusBarIconSize()V
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/systemui/statusbar/phone/IconMerger;)Landroid/view/View;
+.method static synthetic access$0(Lcom/android/systemui/statusbar/phone/IconMerger;)Landroid/view/View;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mMoreView:Landroid/view/View;
@@ -54,7 +44,7 @@
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/IconMerger;->getChildCount()I
 
     move-result v0
 
@@ -63,28 +53,8 @@
     const/4 v1, 0x0
 
     :goto_1
-    if-ge v1, v0, :cond_3
+    if-lt v1, v0, :cond_3
 
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
-
-    move-result v6
-
-    const/16 v7, 0x8
-
-    if-eq v6, v7, :cond_2
-
-    add-int/lit8 v4, v4, 0x1
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_3
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mMoreView:Landroid/view/View;
 
     invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
@@ -96,11 +66,11 @@
     move v3, v2
 
     :goto_2
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_2
 
     add-int/lit8 v4, v4, -0x1
 
-    :cond_4
+    :cond_2
     iget v6, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mIconSize:I
 
     mul-int/2addr v6, v4
@@ -114,9 +84,29 @@
 
     invoke-direct {v5, p0, v2}, Lcom/android/systemui/statusbar/phone/IconMerger$1;-><init>(Lcom/android/systemui/statusbar/phone/IconMerger;Z)V
 
-    invoke-virtual {p0, v5}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v5}, Lcom/android/systemui/statusbar/phone/IconMerger;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
+
+    :cond_3
+    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/IconMerger;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
+
+    move-result v6
+
+    const/16 v7, 0x8
+
+    if-eq v6, v7, :cond_4
+
+    add-int/lit8 v4, v4, 0x1
+
+    :cond_4
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
 
     :cond_5
     move v3, v5
@@ -127,6 +117,56 @@
     move v2, v5
 
     goto :goto_3
+.end method
+
+.method private setStatusBarIconSize()V
+    .locals 4
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "tweaks_status_bar_size"
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    const v1, 0x7f0c009d
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mIconSize:I
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const v1, 0x7f0c0017
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/phone/IconMerger;->mIconSize:I
+
+    goto :goto_0
 .end method
 
 
@@ -162,7 +202,7 @@
 
     move-result v2
 
-    invoke-virtual {p0, v1, v2}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v1, v2}, Lcom/android/systemui/statusbar/phone/IconMerger;->setMeasuredDimension(II)V
 
     return-void
 .end method

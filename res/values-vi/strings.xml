@@ -189,6 +189,7 @@ Nếu bạn bật lại kết nối data, bạn có thể bị tính thêm phí 
     <string name="quick_settings_volume">Âm lượng</string>
     <string name="quick_settings_usage">Lượng dữ liệu sử dụng</string>
     <string name="quick_settings_sync_all">Đồng bộ tất cả</string>
+    <string name="quick_settings_ringtone">Nhạc chuông</string>
     <string name="quick_settings_auto_sync">Tự Động Đồng Bộ</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Thẻ người dùng</string>
@@ -313,7 +314,7 @@ Nếu bạn bật lại kết nối data, bạn có thể bị tính thêm phí 
 -Tắt phản hồi rung.
 -Tắt kết nối dữ liệu khi màn hình tắt.
 -Chỉ cho phép ứng dụng cần thiết chạy."</string>
-    <string name="extreme_auto_power_saver_ask_title_ex5">Chế độ bảo tồn pin</string>
+    <string name="extreme_auto_power_saver_ask_title_ex5">Chế độ tiết kiệm pin</string>
     <string name="extreme_auto_power_saver_ask_msg_ex5">"Bật chế độ tiết kiệm pin sẽ kéo dài tuổi thọ pin bằng cách:
 -Giảm sử dụng CPU.
 -Giảm độ sáng màn hình.
@@ -327,5 +328,4 @@ Nếu bạn bật lại kết nối data, bạn có thể bị tính thêm phí 
 -Tắt phản hồi rung.
 -Tắt kết nối dữ liệu khi màn hình tắt.
 -Chỉ cho phép ứng dụng cần thiết chạy."</string>
-    <string name="quick_settings_ringtone">Nhạc chuông</string>
 </resources>

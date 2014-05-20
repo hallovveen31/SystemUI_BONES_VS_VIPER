@@ -61,6 +61,8 @@
     .end annotation
 .end field
 
+.field mTheme:Lcom/android/systemui/statusbar/theming/VenomBatteryTheming;
+
 .field private plugged:Z
 
 .field private queryMode:Z
@@ -80,92 +82,90 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mIconViews:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mIconViews:Ljava/util/ArrayList;
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
 
-    iput-boolean v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
 
-    iput v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
-    iput v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
-    iput v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+    iput v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
 
-    iput-boolean v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
 
-    new-instance v2, Landroid/os/Handler;
+    new-instance v1, Landroid/os/Handler;
 
-    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
-    iput-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->handler:Landroid/os/Handler;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->handler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/android/systemui/statusbar/policy/BatteryController$1;
+    new-instance v1, Lcom/android/systemui/statusbar/policy/BatteryController$1;
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->handler:Landroid/os/Handler;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->handler:Landroid/os/Handler;
 
-    invoke-direct {v2, p0, v3}, Lcom/android/systemui/statusbar/policy/BatteryController$1;-><init>(Lcom/android/systemui/statusbar/policy/BatteryController;Landroid/os/Handler;)V
+    invoke-direct {v1, p0, v2}, Lcom/android/systemui/statusbar/policy/BatteryController$1;-><init>(Lcom/android/systemui/statusbar/policy/BatteryController;Landroid/os/Handler;)V
 
-    iput-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryObserver:Landroid/database/ContentObserver;
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryObserver:Landroid/database/ContentObserver;
 
-    iput-boolean v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryTextVisible:Z
+    iput-boolean v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryTextVisible:Z
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mContext:Landroid/content/Context;
-
-    new-instance v1, Landroid/content/IntentFilter;
-
-    invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
-
-    const-string v2, "android.intent.action.BATTERY_CHANGED"
-
-    invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    const-string v2, "com.htc.systemui.UI_QUERY_END"
+    const-string v1, "android.intent.action.BATTERY_CHANGED"
 
-    invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string v2, "com.htc.systemui.UI_QUERY_START"
+    const-string v1, "com.htc.systemui.UI_QUERY_END"
 
-    invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    const-string v2, "com.htc.permission.APP_PLATFORM"
+    const-string v1, "com.htc.systemui.UI_QUERY_START"
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p0, v0, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-virtual {p1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    new-instance v1, Lcom/android/systemui/statusbar/theming/VenomBatteryTheming;
+
+    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mContext:Landroid/content/Context;
+
+    invoke-direct {v1, v2}, Lcom/android/systemui/statusbar/theming/VenomBatteryTheming;-><init>(Landroid/content/Context;)V
+
+    iput-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mTheme:Lcom/android/systemui/statusbar/theming/VenomBatteryTheming;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->startBatteryObserve()V
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/systemui/statusbar/policy/BatteryController;)Landroid/content/Context;
+.method static synthetic access$0(Lcom/android/systemui/statusbar/policy/BatteryController;)Landroid/content/Context;
     .locals 1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mContext:Landroid/content/Context;
@@ -173,7 +173,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/android/systemui/statusbar/policy/BatteryController;Z)V
+.method static synthetic access$1(Lcom/android/systemui/statusbar/policy/BatteryController;Z)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/BatteryController;->updateBatteryTextVisible(Z)V
@@ -208,21 +208,15 @@
 
     sget-boolean v1, Lcom/android/systemui/statusbar/policy/BatteryController;->DEBUG:Z
 
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_0
+    if-eqz v1, :cond_0
 
     const-string v1, "StatusBar.BatteryController"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v3, "sendIconResource:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget v3, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
 
@@ -267,13 +261,8 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_0
 
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryObserver:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
@@ -302,96 +291,60 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
-    goto :goto_0
-.end method
-
-.method private stateToStringPJ(I)Ljava/lang/String;
-    .locals 1
-
-    packed-switch p1, :pswitch_data_0
-
-    const-string v0, "UNKNOWN"
-
-    :goto_0
-    return-object v0
-
-    :pswitch_0
-    const-string v0, "NOT_CHARGING"
-
-    goto :goto_0
-
-    :pswitch_1
-    const-string v0, "CHARGING"
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string v0, "CHARGING_FULL"
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    :cond_0
+    return-void
 .end method
 
 .method private updateBatteryTextVisible(Z)V
-    .locals 4
+    .locals 5
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
 
-    if-nez v2, :cond_0
+    if-nez v4, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     const/4 v0, 0x0
 
     :goto_1
-    if-ge v0, v1, :cond_2
+    if-lt v0, v1, :cond_1
 
-    iget-object v2, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryTextVisible:Z
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    goto :goto_0
+
+    :cond_1
+    iget-object v4, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/TextView;
 
-    const/4 v3, 0x1
-
-    if-ne p1, v3, :cond_1
+    if-eqz p1, :cond_2
 
     const/4 v3, 0x0
 
     :goto_2
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     const/16 v3, 0x8
 
     goto :goto_2
-
-    :cond_2
-    iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryTextVisible:Z
-
-    goto :goto_0
 .end method
 
 
@@ -409,22 +362,20 @@
 .method public addLabelView(Landroid/widget/TextView;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     if-eqz p1, :cond_0
 
-    iget-boolean v0, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryTextVisible:Z
+    iget-boolean v1, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->batteryTextVisible:Z
 
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
+    if-eqz v1, :cond_1
 
     const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     :cond_0
     return-void
@@ -436,19 +387,19 @@
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 15
+    .locals 16
 
     invoke-virtual/range {p2 .. p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     const-string v10, "android.intent.action.BATTERY_CHANGED"
 
-    invoke-virtual {v2, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_b
+    if-eqz v10, :cond_a
 
     const-string v10, "level"
 
@@ -460,7 +411,9 @@
 
     move-result v10
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    move-object/from16 v0, p0
+
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
     const-string v10, "status"
 
@@ -472,7 +425,9 @@
 
     move-result v10
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    move-object/from16 v0, p0
+
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     const-string v10, "plugged"
 
@@ -484,50 +439,54 @@
 
     move-result v10
 
-    if-eqz v10, :cond_3
+    if-eqz v10, :cond_4
 
     const/4 v10, 0x1
 
     :goto_0
-    iput-boolean v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
+    move-object/from16 v0, p0
+
+    iput-boolean v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
 
     const v10, 0x7f0202c8
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+    move-object/from16 v0, p0
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     const/4 v11, 0x2
 
-    if-ne v10, v11, :cond_4
+    if-ne v10, v11, :cond_5
 
     const v10, 0x7f0202da
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+    move-object/from16 v0, p0
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
     if-nez v10, :cond_0
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
     add-int/lit8 v10, v10, 0x1
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    move-object/from16 v0, p0
+
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
     :cond_0
     :goto_1
-    const-string v10, "power_jacket_exist"
-
-    const/4 v11, 0x0
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v10, v11}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v6
-
-    const-string v10, "power_jacket_status"
+    const-string v10, "support_extension"
 
     const/4 v11, 0x0
 
@@ -535,7 +494,7 @@
 
     invoke-virtual {v0, v10, v11}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v7
+    move-result v5
 
     const-string v10, "unsupport_charger"
 
@@ -545,36 +504,32 @@
 
     invoke-virtual {v0, v10, v11}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v8
+    move-result v2
 
-    const/4 v10, 0x1
-
-    if-ne v8, v10, :cond_1
+    if-eqz v2, :cond_1
 
     const v10, 0x7f0202ee
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+    move-object/from16 v0, p0
+
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
 
     :cond_1
     sget-boolean v10, Lcom/android/systemui/statusbar/policy/BatteryController;->DEBUG:Z
 
-    const/4 v11, 0x1
-
-    if-ne v10, v11, :cond_2
+    if-eqz v10, :cond_2
 
     const-string v10, "StatusBar.BatteryController"
 
     new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v12, "status:"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v11
+    move-object/from16 v0, p0
 
-    iget v12, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    iget v12, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -586,7 +541,9 @@
 
     move-result-object v11
 
-    iget v12, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    move-object/from16 v0, p0
+
+    iget v12, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -598,7 +555,21 @@
 
     move-result-object v11
 
-    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string v12, " support_extension:"
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-static {v5}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
@@ -608,33 +579,11 @@
 
     move-result-object v11
 
-    iget-boolean v12, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, " pj_exist:"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, " pj_status:"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-direct {p0, v7}, Lcom/android/systemui/statusbar/policy/BatteryController;->stateToStringPJ(I)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v11
 
@@ -645,70 +594,92 @@
     invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
-    iget-object v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mIconViews:Ljava/util/ArrayList;
+    move-object/from16 v0, p0
+
+    iget-object v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mIconViews:Ljava/util/ArrayList;
 
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v8
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     :goto_2
-    if-ge v4, v1, :cond_7
+    if-lt v3, v8, :cond_7
 
-    iget-object v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mIconViews:Ljava/util/ArrayList;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v10, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    iget-object v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
 
-    move-result-object v9
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
-    check-cast v9, Landroid/widget/ImageView;
+    move-result v9
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+    const/4 v7, 0x0
 
-    invoke-virtual {v9, v10}, Landroid/widget/ImageView;->setImageResource(I)V
+    :goto_3
+    if-lt v7, v9, :cond_8
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9, v10}, Landroid/widget/ImageView;->setImageLevel(I)V
+    iget-object v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
 
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    goto :goto_2
+    move-result-object v6
+
+    :goto_4
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v10
+
+    if-nez v10, :cond_9
+
+    move-object/from16 v0, p0
+
+    iget-boolean v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
+
+    if-eqz v10, :cond_3
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->broadcastBatteryIntent()V
 
     :cond_3
+    :goto_5
+    return-void
+
+    :cond_4
     const/4 v10, 0x0
 
     goto/16 :goto_0
 
-    :cond_4
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     const/4 v11, 0x3
 
-    if-eq v10, v11, :cond_5
+    if-eq v10, v11, :cond_6
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     const/4 v11, 0x4
 
-    if-eq v10, v11, :cond_5
+    if-eq v10, v11, :cond_6
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     const/4 v11, 0x5
 
-    if-ne v10, v11, :cond_6
+    if-eq v10, v11, :cond_6
 
-    :cond_5
-    const v10, 0x7f0202c8
+    move-object/from16 v0, p0
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
-
-    goto/16 :goto_1
-
-    :cond_6
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->status:I
 
     const/4 v11, 0x1
 
@@ -716,152 +687,199 @@
 
     const v10, 0x7f020306
 
-    iput v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+    move-object/from16 v0, p0
+
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
+
+    goto/16 :goto_1
+
+    :cond_6
+    const v10, 0x7f0202c8
+
+    move-object/from16 v0, p0
+
+    iput v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
 
     goto/16 :goto_1
 
     :cond_7
-    iget-object v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
+    iget-object v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mIconViews:Ljava/util/ArrayList;
 
-    move-result v1
+    invoke-virtual {v10, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    move-result-object v4
 
-    :goto_3
-    if-ge v4, v1, :cond_8
+    check-cast v4, Landroid/widget/ImageView;
 
-    iget-object v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v10, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    iget-object v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mTheme:Lcom/android/systemui/statusbar/theming/VenomBatteryTheming;
 
-    move-result-object v9
+    move-object/from16 v0, p0
 
-    check-cast v9, Landroid/widget/TextView;
+    iget v11, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->icon:I
 
-    iget-object v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mContext:Landroid/content/Context;
+    invoke-virtual {v10, v4, v11}, Lcom/android/systemui/statusbar/theming/VenomBatteryTheming;->setIcon(Landroid/widget/ImageView;I)V
 
-    const v11, 0x7f0a0018
+    move-object/from16 v0, p0
 
-    const/4 v12, 0x1
+    iget v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
-    new-array v12, v12, [Ljava/lang/Object;
+    invoke-virtual {v4, v10}, Landroid/widget/ImageView;->setImageLevel(I)V
 
-    const/4 v13, 0x0
+    add-int/lit8 v3, v3, 0x1
 
-    iget v14, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    goto :goto_2
 
-    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_8
+    move-object/from16 v0, p0
 
-    move-result-object v14
+    iget-object v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mLabelViews:Ljava/util/ArrayList;
 
-    aput-object v14, v12, v13
-
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v10, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
-    invoke-virtual {v9, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    check-cast v10, Landroid/widget/TextView;
 
-    add-int/lit8 v4, v4, 0x1
+    move-object/from16 v0, p0
 
-    goto :goto_3
+    iget-object v11, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->mContext:Landroid/content/Context;
 
-    :cond_8
-    iget-object v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->mChangeCallbacks:Ljava/util/ArrayList;
+    const v12, 0x7f0a0018
 
-    invoke-virtual {v10}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    const/4 v13, 0x1
 
-    move-result-object v5
+    new-array v13, v13, [Ljava/lang/Object;
 
-    :goto_4
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v14, 0x0
 
-    move-result v10
+    move-object/from16 v0, p0
 
-    if-eqz v10, :cond_9
+    iget v15, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v15
 
-    check-cast v3, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
+    aput-object v15, v13, v14
 
-    iget v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+    invoke-virtual {v11, v12, v13}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-boolean v11, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
+    move-result-object v11
 
-    invoke-interface {v3, v10, v11}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onBatteryLevelChanged(IZ)V
+    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_4
+    add-int/lit8 v7, v7, 0x1
+
+    goto/16 :goto_3
 
     :cond_9
-    iget-boolean v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const/4 v11, 0x1
+    move-result-object v10
 
-    if-ne v10, v11, :cond_a
+    check-cast v10, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->broadcastBatteryIntent()V
+    move-object/from16 v0, p0
+
+    iget v11, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->level:I
+
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->plugged:Z
+
+    invoke-interface {v10, v11, v12}, Lcom/android/systemui/statusbar/policy/BatteryController$BatteryStateChangeCallback;->onBatteryLevelChanged(IZ)V
+
+    goto/16 :goto_4
 
     :cond_a
-    :goto_5
-    return-void
-
-    :cond_b
     const-string v10, "com.htc.systemui.UI_QUERY_START"
 
-    invoke-virtual {v2, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_c
+    if-eqz v10, :cond_b
 
     const/4 v10, 0x1
 
-    iput-boolean v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
+    move-object/from16 v0, p0
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->broadcastBatteryIntent()V
+    iput-boolean v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->broadcastBatteryIntent()V
 
     sget-boolean v10, Lcom/android/systemui/statusbar/policy/BatteryController;->DEBUG:Z
 
-    const/4 v11, 0x1
-
-    if-ne v10, v11, :cond_a
+    if-eqz v10, :cond_3
 
     const-string v10, "StatusBar.BatteryController"
 
-    const-string v11, "onReceive:com.htc.systemui.UI_QUERY_START"
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    const-string v12, "receiveStartTime:"
+
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v12
+
+    invoke-virtual {v11, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
 
     invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_5
+    goto/16 :goto_5
 
-    :cond_c
+    :cond_b
     const-string v10, "com.htc.systemui.UI_QUERY_END"
 
-    invoke-virtual {v2, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_a
+    if-eqz v10, :cond_3
 
     const/4 v10, 0x0
 
-    iput-boolean v10, p0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
+    move-object/from16 v0, p0
+
+    iput-boolean v10, v0, Lcom/android/systemui/statusbar/policy/BatteryController;->queryMode:Z
 
     sget-boolean v10, Lcom/android/systemui/statusbar/policy/BatteryController;->DEBUG:Z
 
-    const/4 v11, 0x1
-
-    if-ne v10, v11, :cond_a
+    if-eqz v10, :cond_3
 
     const-string v10, "StatusBar.BatteryController"
 
-    const-string v11, "onReceive:com.htc.systemui.UI_QUERY_END"
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    const-string v12, "receiveFinishTime:"
+
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v12
+
+    invoke-virtual {v11, v12, v13}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
 
     invoke-static {v10, v11}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_5
+    goto/16 :goto_5
 .end method

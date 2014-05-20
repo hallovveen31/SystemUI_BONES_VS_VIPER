@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;-><init>(Landroid/content/Context;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -40,13 +40,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "onReceive: action="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -57,7 +53,7 @@
     move-result-object v1
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->printLog(Ljava/lang/String;)V
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$000(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$0(Ljava/lang/String;)V
 
     const-string v1, "android.intent.action.ALARM_CHANGED"
 
@@ -70,7 +66,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateAlarm(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$100(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$1(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     :cond_0
     :goto_0
@@ -88,7 +84,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateSyncState(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$200(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$2(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     goto :goto_0
 
@@ -113,7 +109,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateBluetooth(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$300(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$3(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     goto :goto_0
 
@@ -138,7 +134,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateVolume()V
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$400(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$4(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;)V
 
     goto :goto_0
 
@@ -154,7 +150,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateTTY(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$500(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$5(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     goto :goto_0
 
@@ -170,7 +166,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateHeadsetStatus(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$600(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$6(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     goto :goto_0
 
@@ -186,7 +182,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateHACStatus(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$700(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$7(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     goto :goto_0
 
@@ -211,7 +207,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$1;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateGps(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$800(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$8(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     goto :goto_0
 .end method

@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 696
     iput-object p1, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$5;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,6 +40,8 @@
 .method public run()V
     .locals 4
 
+    .prologue
+    .line 699
     iget-object v0, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$5;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
@@ -47,9 +52,11 @@
 
     if-ne v0, v1, :cond_0
 
+    .line 708
     :goto_0
     return-void
 
+    .line 702
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$5;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
@@ -60,6 +67,7 @@
 
     if-eqz v0, :cond_1
 
+    .line 703
     iget-object v0, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$5;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     #getter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->mToast:Landroid/widget/Toast;
@@ -69,6 +77,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
+    .line 705
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$5;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
@@ -95,6 +104,7 @@
     #setter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->mToast:Landroid/widget/Toast;
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->access$802(Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;Landroid/widget/Toast;)Landroid/widget/Toast;
 
+    .line 707
     iget-object v0, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$5;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     #getter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->mToast:Landroid/widget/Toast;

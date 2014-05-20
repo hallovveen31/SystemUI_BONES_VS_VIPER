@@ -190,6 +190,7 @@ być monitorowana"</string>
     <string name="quick_settings_volume">Głośność</string>
     <string name="quick_settings_usage">Użycie danych</string>
     <string name="quick_settings_sync_all">Synchronizuj wszystko</string>
+    <string name="quick_settings_ringtone">Dzwonek</string>
     <string name="quick_settings_auto_sync">Synchronizacja automatyczna</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Karta użytkownika</string>
@@ -328,5 +329,4 @@ być monitorowana"</string>
 -Wyłączenie wibracji.
 -Wyłączenie połączenia danych przy wyłączonym ekranie.
 -Zezwolenie na uruchamianie tylko ważnych aplikacji."</string>
-    <string name="quick_settings_ringtone">Dzwonek</string>
 </resources>

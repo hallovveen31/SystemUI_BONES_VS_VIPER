@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">အသံပမာဏ</string>
     <string name="quick_settings_usage">ေဒတာသုံးစြဲမႈ</string>
     <string name="quick_settings_sync_all">အားလံုး စည္းညႇိ</string>
+    <string name="quick_settings_ringtone">ဖုန္းျမည္သံ</string>
     <string name="quick_settings_auto_sync">ေအာ္တို ထပ္တူျပဳ</string>
     <string name="quick_settings_bluetooth">ဘလူးတု</string>
     <string name="quick_settings_user_card">အသံုးျပဳသူ ကဒ္</string>
@@ -328,5 +329,4 @@
 -တုန္ခါျခင္းတုံ႔ျပန္မႈ ပိတ္ျခင္း။
 -မ်က္ႏွာျပင္ပိတ္ထားစဥ္ ေဒတာခ်ိတ္ဆက္မႈ ပိတ္ျခင္း။
 -အဓိကက်ေသာ အက္ပမ်ားကိုသာ လုပ္ေဆာင္မႈျပဳျခင္း။"</string>
-    <string name="quick_settings_ringtone">ဖုန္းျမည္သံ</string>
 </resources>

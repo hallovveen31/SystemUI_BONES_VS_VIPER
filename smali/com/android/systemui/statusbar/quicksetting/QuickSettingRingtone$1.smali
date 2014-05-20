@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 48
     iput-object p1, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone$1;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
+    .parameter "view"
 
+    .prologue
+    .line 52
     new-instance v0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone$1$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone$1$1;-><init>(Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone$1;)V
@@ -47,5 +53,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
+    .line 89
     return-void
 .end method

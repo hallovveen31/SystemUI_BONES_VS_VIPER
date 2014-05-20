@@ -9,7 +9,7 @@
 # instance fields
 .field private mDemoMode:Z
 
-.field private final mIconSize:I
+.field private mIconSize:I
 
 .field private final mStatusIcons:Landroid/widget/LinearLayout;
 
@@ -26,7 +26,7 @@
 
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
 
-    iput p2, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mIconSize:I
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->setStatusBarIconSize()V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
 
@@ -42,11 +42,11 @@
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->setOrientation(I)V
 
     const/16 v1, 0x10
 
-    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
+    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->setGravity(I)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
 
@@ -67,8 +67,58 @@
     return-void
 .end method
 
+.method private setStatusBarIconSize()V
+    .locals 4
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "tweaks_status_bar_size"
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    const v1, 0x7f0c009d
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mIconSize:I
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const v1, 0x7f0c0017
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mIconSize:I
+
+    goto :goto_0
+.end method
+
 .method private updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 10
+    .locals 12
 
     const/4 v4, 0x0
 
@@ -89,15 +139,27 @@
 
     move-result v1
 
-    if-ge v7, v1, :cond_1
+    if-lt v7, v1, :cond_1
 
+    :goto_2
+    if-nez p3, :cond_4
+
+    const/4 v1, -0x1
+
+    if-eq v8, v1, :cond_4
+
+    invoke-virtual {p0, v8}, Landroid/view/ViewGroup;->removeViewAt(I)V
+
+    goto :goto_0
+
+    :cond_1
     invoke-virtual {p0, v7}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v9
+    move-result-object v10
 
-    check-cast v9, Lcom/android/systemui/statusbar/StatusBarIconView;
+    check-cast v10, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    invoke-virtual {v9}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    invoke-virtual {v10}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -111,29 +173,20 @@
 
     move v8, v7
 
-    :cond_1
-    if-nez p3, :cond_4
-
-    const/4 v1, -0x1
-
-    if-eq v8, v1, :cond_4
-
-    invoke-virtual {p0, v8}, Landroid/view/ViewGroup;->removeViewAt(I)V
-
-    goto :goto_0
+    goto :goto_2
 
     :cond_2
-    invoke-virtual {v9}, Lcom/android/systemui/statusbar/StatusBarIconView;->getStatusBarIcon()Lcom/android/internal/statusbar/StatusBarIcon;
+    invoke-virtual {v10}, Lcom/android/systemui/statusbar/StatusBarIconView;->getStatusBarIcon()Lcom/android/internal/statusbar/StatusBarIcon;
 
-    move-result-object v0
+    move-result-object v9
 
-    iput-object p2, v0, Lcom/android/internal/statusbar/StatusBarIcon;->iconPackage:Ljava/lang/String;
+    iput-object p2, v9, Lcom/android/internal/statusbar/StatusBarIcon;->iconPackage:Ljava/lang/String;
 
-    iput p3, v0, Lcom/android/internal/statusbar/StatusBarIcon;->iconId:I
+    iput p3, v9, Lcom/android/internal/statusbar/StatusBarIcon;->iconId:I
 
-    invoke-virtual {v9, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
+    invoke-virtual {v10, v9}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
 
-    invoke-virtual {v9}, Lcom/android/systemui/statusbar/StatusBarIconView;->updateDrawable()V
+    invoke-virtual {v10}, Lcom/android/systemui/statusbar/StatusBarIconView;->updateDrawable()V
 
     goto :goto_0
 
@@ -157,27 +210,27 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/internal/statusbar/StatusBarIcon;-><init>(Ljava/lang/String;Landroid/os/UserHandle;IIILjava/lang/CharSequence;)V
 
-    new-instance v9, Lcom/android/systemui/statusbar/StatusBarIconView;
+    new-instance v11, Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mContext:Landroid/content/Context;
 
     const/4 v2, 0x0
 
-    invoke-direct {v9, v1, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {v11, v1, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-virtual {v9, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v11, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    invoke-virtual {v9, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
+    invoke-virtual {v11, v0}, Lcom/android/systemui/statusbar/StatusBarIconView;->set(Lcom/android/internal/statusbar/StatusBarIcon;)Z
 
-    new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
+    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     iget v2, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mIconSize:I
 
     iget v3, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mIconSize:I
 
-    invoke-direct {v1, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v1, v2, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {p0, v9, v4, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, v11, v4, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 .end method
@@ -185,323 +238,487 @@
 
 # virtual methods
 .method public dispatchDemoCommand(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 12
+    .locals 23
 
-    iget-boolean v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+    move-object/from16 v0, p0
 
-    if-nez v10, :cond_1
+    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
 
-    const-string v10, "enter"
+    move/from16 v21, v0
 
-    invoke-virtual {p1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-nez v21, :cond_1
 
-    move-result v10
+    const-string v21, "enter"
 
-    if-eqz v10, :cond_1
+    move-object/from16 v0, p1
 
-    const/4 v10, 0x1
+    move-object/from16 v1, v21
 
-    iput-boolean v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
+    move-result v21
 
-    const/16 v11, 0x8
+    if-eqz v21, :cond_1
 
-    invoke-virtual {v10, v11}, Landroid/view/View;->setVisibility(I)V
+    const/16 v21, 0x1
 
-    const/4 v10, 0x0
+    move/from16 v0, v21
 
-    invoke-virtual {p0, v10}, Landroid/view/View;->setVisibility(I)V
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x8
+
+    invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
+
+    const/16 v21, 0x0
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-boolean v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+    move-object/from16 v0, p0
 
-    if-eqz v10, :cond_2
+    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
 
-    const-string v10, "exit"
+    move/from16 v21, v0
 
-    invoke-virtual {p1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v21, :cond_2
 
-    move-result v10
+    const-string v21, "exit"
 
-    if-eqz v10, :cond_2
+    move-object/from16 v0, p1
 
-    const/4 v10, 0x0
+    move-object/from16 v1, v21
 
-    iput-boolean v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
+    move-result v21
 
-    const/4 v11, 0x0
+    if-eqz v21, :cond_2
 
-    invoke-virtual {v10, v11}, Landroid/view/View;->setVisibility(I)V
+    const/16 v21, 0x0
 
-    const/16 v10, 0x8
+    move/from16 v0, v21
 
-    invoke-virtual {p0, v10}, Landroid/view/View;->setVisibility(I)V
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mStatusIcons:Landroid/widget/LinearLayout;
+
+    move-object/from16 v21, v0
+
+    const/16 v22, 0x0
+
+    invoke-virtual/range {v21 .. v22}, Landroid/view/View;->setVisibility(I)V
+
+    const/16 v21, 0x8
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
     :cond_2
-    iget-boolean v10, p0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
+    move-object/from16 v0, p0
 
-    if-eqz v10, :cond_0
+    iget-boolean v0, v0, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->mDemoMode:Z
 
-    const-string v10, "status"
+    move/from16 v21, v0
 
-    invoke-virtual {p1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v21, :cond_0
 
-    move-result v10
+    const-string v21, "status"
 
-    if-eqz v10, :cond_0
+    move-object/from16 v0, p1
 
-    const-string v10, "volume"
+    move-object/from16 v1, v21
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v9
+    move-result v21
 
-    if-eqz v9, :cond_3
+    if-eqz v21, :cond_0
 
-    const-string v10, "silent"
+    const-string v21, "volume"
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-object/from16 v0, p2
 
-    move-result v10
+    move-object/from16 v1, v21
 
-    if-eqz v10, :cond_b
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v12
+
+    if-eqz v12, :cond_3
+
+    const-string v21, "silent"
+
+    move-object/from16 v0, v21
+
+    invoke-virtual {v12, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_b
 
     const v3, 0x7f020488
 
     :goto_1
-    const-string v10, "volume"
+    const-string v21, "volume"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_3
-    const-string v10, "bluetooth"
+    const-string v21, "bluetooth"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v1
+    move-object/from16 v1, v21
 
-    if-eqz v1, :cond_4
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "disconnected"
+    move-result-object v13
 
-    invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v13, :cond_4
 
-    move-result v10
+    const-string v21, "disconnected"
 
-    if-eqz v10, :cond_d
+    move-object/from16 v0, v21
 
-    const v3, 0x7f02032d
+    invoke-virtual {v13, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_d
+
+    const v4, 0x7f02032d
 
     :goto_2
-    const-string v10, "bluetooth"
+    const-string v21, "bluetooth"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v4}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_4
-    const-string v10, "location"
+    const-string v21, "location"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v4
+    move-object/from16 v1, v21
 
-    if-eqz v4, :cond_5
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v14
 
-    invoke-virtual {v4, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v14, :cond_5
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_f
+    move-object/from16 v0, v21
 
-    const v3, 0x7f020410
+    invoke-virtual {v14, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_f
+
+    const v5, 0x7f020410
 
     :goto_3
-    const-string v10, "location"
+    const-string v21, "location"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v5}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_5
-    const-string v10, "alarm"
+    const-string v21, "alarm"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v0
+    move-object/from16 v1, v21
 
-    if-eqz v0, :cond_6
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v15
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v15, :cond_6
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_10
+    move-object/from16 v0, v21
 
-    const v3, 0x7f0202c7
+    invoke-virtual {v15, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_10
+
+    const v6, 0x7f0202c7
 
     :goto_4
-    const-string v10, "alarm_clock"
+    const-string v21, "alarm_clock"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v6}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_6
-    const-string v10, "sync"
+    const-string v21, "sync"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v7
+    move-object/from16 v1, v21
 
-    if-eqz v7, :cond_7
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v16
 
-    invoke-virtual {v7, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v16, :cond_7
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_11
+    move-object/from16 v0, v16
 
-    const v3, 0x7f0204bc
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_11
+
+    const v7, 0x7f0204bc
 
     :goto_5
-    const-string v10, "sync_active"
+    const-string v21, "sync_active"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v7}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_7
-    const-string v10, "tty"
+    const-string v21, "tty"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v8
+    move-object/from16 v1, v21
 
-    if-eqz v8, :cond_8
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v17
 
-    invoke-virtual {v8, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v17, :cond_8
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_12
+    move-object/from16 v0, v17
 
-    const v3, 0x7f0204c0
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_12
+
+    const v8, 0x7f0204c0
 
     :goto_6
-    const-string v10, "tty"
+    const-string v21, "tty"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v8}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_8
-    const-string v10, "eri"
+    const-string v21, "eri"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v2
+    move-object/from16 v1, v21
 
-    if-eqz v2, :cond_9
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v18
 
-    invoke-virtual {v2, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v18, :cond_9
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_13
+    move-object/from16 v0, v18
 
-    const v3, 0x7f02048a
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_13
+
+    const v9, 0x7f02048a
 
     :goto_7
-    const-string v10, "cdma_eri"
+    const-string v21, "cdma_eri"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v9}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_9
-    const-string v10, "mute"
+    const-string v21, "mute"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v5
+    move-object/from16 v1, v21
 
-    if-eqz v5, :cond_a
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v19
 
-    invoke-virtual {v5, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v19, :cond_a
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_14
+    move-object/from16 v0, v19
 
-    const v3, 0x1080076
+    move-object/from16 v1, v21
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v21
+
+    if-eqz v21, :cond_14
+
+    const v10, 0x1080076
 
     :goto_8
-    const-string v10, "mute"
+    const-string v21, "mute"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v10}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_a
-    const-string v10, "speakerphone"
+    const-string v21, "speakerphone"
 
-    invoke-virtual {p2, v10}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v0, p2
 
-    move-result-object v6
+    move-object/from16 v1, v21
 
-    if-eqz v6, :cond_0
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v10, "show"
+    move-result-object v20
 
-    invoke-virtual {v6, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v20, :cond_0
 
-    move-result v10
+    const-string v21, "show"
 
-    if-eqz v10, :cond_15
+    invoke-virtual/range {v20 .. v21}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const v3, 0x1080087
+    move-result v21
+
+    if-eqz v21, :cond_15
+
+    const v11, 0x1080087
 
     :goto_9
-    const-string v10, "speakerphone"
+    const-string v21, "speakerphone"
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    invoke-direct {p0, v10, v11, v3}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v21
+
+    move-object/from16 v2, v22
+
+    invoke-direct {v0, v1, v2, v11}, Lcom/android/systemui/statusbar/phone/DemoStatusIcons;->updateSlot(Ljava/lang/String;Ljava/lang/String;I)V
 
     goto/16 :goto_0
 
     :cond_b
-    const-string v10, "vibrate"
+    const-string v21, "vibrate"
 
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-object/from16 v0, v21
 
-    move-result v10
+    invoke-virtual {v12, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v10, :cond_c
+    move-result v21
+
+    if-eqz v21, :cond_c
 
     const v3, 0x7f020489
 
@@ -513,55 +730,57 @@
     goto/16 :goto_1
 
     :cond_d
-    const-string v10, "connected"
+    const-string v21, "connected"
 
-    invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-object/from16 v0, v21
 
-    move-result v10
+    invoke-virtual {v13, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v10, :cond_e
+    move-result v21
 
-    const v3, 0x7f02032e
+    if-eqz v21, :cond_e
+
+    const v4, 0x7f02032e
 
     goto/16 :goto_2
 
     :cond_e
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     goto/16 :goto_2
 
     :cond_f
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     goto/16 :goto_3
 
     :cond_10
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
     goto/16 :goto_4
 
     :cond_11
-    const/4 v3, 0x0
+    const/4 v7, 0x0
 
     goto/16 :goto_5
 
     :cond_12
-    const/4 v3, 0x0
+    const/4 v8, 0x0
 
-    goto :goto_6
+    goto/16 :goto_6
 
     :cond_13
-    const/4 v3, 0x0
+    const/4 v9, 0x0
 
-    goto :goto_7
+    goto/16 :goto_7
 
     :cond_14
-    const/4 v3, 0x0
+    const/4 v10, 0x0
 
     goto :goto_8
 
     :cond_15
-    const/4 v3, 0x0
+    const/4 v11, 0x0
 
     goto :goto_9
 .end method

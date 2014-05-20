@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">مستوى الصوت</string>
     <string name="quick_settings_usage">استخدام البيانات</string>
     <string name="quick_settings_sync_all">مزامنة الكل</string>
+    <string name="quick_settings_ringtone">نغمة الرنين</string>
     <string name="quick_settings_auto_sync">المزامنة التلقائية</string>
     <string name="quick_settings_bluetooth">بلوتوث</string>
     <string name="quick_settings_user_card">بطاقة المستخدم</string>
@@ -286,8 +287,8 @@
 -وإيقاف تشغيل الاستجابة بالاهتزاز
 -وإيقاف اتصال بيانات عند غلق الشاشة
 -والسماح فقط بتشغيل التطبيقات الهامة."</string>
-    <string name="extreme_auto_power_saver_ask_title">وضع توفير الطاقة القصوى</string>
-    <string name="extreme_auto_power_saver_ask_msg">"تشغيل وضع توفير الطاقة القصوى يطيل عمر البطارية من خلال:
+    <string name="extreme_auto_power_saver_ask_title">وضع موفر الطاقة القصوى</string>
+    <string name="extreme_auto_power_saver_ask_msg">"تشغيل وضع موفر الطاقة القصوى يطيل عمر البطارية من خلال:
 -حفظ استخدام CPU
 -وتخفيض سطوع الشاشة
 -وإيقاف تشغيل الاستجابة بالاهتزاز
@@ -328,5 +329,4 @@
 -وإيقاف تشغيل الاستجابة بالاهتزاز
 -وإيقاف اتصال بيانات عند غلق الشاشة
 -والسماح فقط بتشغيل التطبيقات الهامة."</string>
-    <string name="quick_settings_ringtone">نغمة الرنين</string>
 </resources>

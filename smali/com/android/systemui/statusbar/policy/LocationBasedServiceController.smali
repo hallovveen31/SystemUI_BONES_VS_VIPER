@@ -69,13 +69,8 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->mService:Landroid/app/StatusBarManager;
 
-    if-nez v1, :cond_1
+    if-eqz v1, :cond_0
 
-    :cond_0
-    :goto_0
-    return-void
-
-    :cond_1
     const-string v1, "LbsController"
 
     const-string v2, "LbsController created"
@@ -138,26 +133,11 @@
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->updateIcon()V
 
-    goto :goto_0
-.end method
-
-.method static synthetic access$000(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)I
-    .locals 1
-
-    iget v0, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->mGpsSetting:I
-
-    return v0
-.end method
-
-.method static synthetic access$100(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;Landroid/content/Context;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->saveState(Landroid/content/Context;I)V
-
+    :cond_0
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
+.method static synthetic access$0(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->updateValue()V
@@ -165,7 +145,7 @@
     return-void
 .end method
 
-.method static synthetic access$300(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
+.method static synthetic access$1(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->updateIcon()V
@@ -173,8 +153,24 @@
     return-void
 .end method
 
+.method static synthetic access$2(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)I
+    .locals 1
+
+    iget v0, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->mGpsSetting:I
+
+    return v0
+.end method
+
+.method static synthetic access$3(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;Landroid/content/Context;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->saveState(Landroid/content/Context;I)V
+
+    return-void
+.end method
+
 .method private getState(Landroid/content/Context;)I
-    .locals 5
+    .locals 4
 
     invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
@@ -188,73 +184,15 @@
 
     move-result v0
 
-    const-string v2, "LbsController"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "get gpsone state="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    return v0
-.end method
-
-.method public static isSupported()Z
-    .locals 1
-
-    invoke-static {}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->isSprint()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private saveState(Landroid/content/Context;I)V
-    .locals 4
-
-    invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    const-string v2, "pre_state_of_gpsone"
-
-    invoke-interface {v1, v2, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
     const-string v1, "LbsController"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v3, "get gpsone state="
 
-    const-string v3, "save gpsone state="
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -264,13 +202,61 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    return v0
+.end method
+
+.method public static isSupported()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private saveState(Landroid/content/Context;I)V
+    .locals 3
+
+    invoke-static {p1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "pre_state_of_gpsone"
+
+    invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    const-string v0, "LbsController"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "save gpsone state="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     return-void
 .end method
 
 .method private setIconType(I)V
     .locals 5
 
-    const v0, 0x7f02050e
+    const v0, 0x7f02050c
 
     packed-switch p1, :pswitch_data_0
 
@@ -296,13 +282,12 @@
 
     const v0, 0x7f02050b
 
-    :goto_1
     goto :goto_0
 
     :cond_0
     const v0, 0x7f02050a
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_1
     invoke-static {}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->isVerizon()Z
@@ -311,20 +296,19 @@
 
     if-eqz v1, :cond_1
 
-    const v0, 0x7f02050d
+    const v0, 0x7f020509
 
-    :goto_2
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f02050c
+    const v0, 0x7f020508
 
-    goto :goto_2
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
         :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
@@ -335,13 +319,11 @@
 
     const/4 v2, 0x0
 
-    const/4 v0, 0x1
-
     invoke-static {}, Lcom/android/systemui/statusbar/policy/HtcGenericNetworkController;->isVerizon()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->isGpsEnabled:Z
 
@@ -349,33 +331,40 @@
 
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->isVerizonLbsEnabled:Z
 
-    if-eqz v3, :cond_1
+    if-nez v3, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    if-eqz v0, :cond_3
+
+    :goto_1
+    invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->setIconType(I)V
+
+    return-void
 
     :cond_0
     move v0, v2
 
-    :goto_0
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->setIconType(I)V
-
-    return-void
-
-    :cond_1
-    move v0, v1
-
     goto :goto_0
 
-    :cond_2
+    :cond_1
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->isGpsEnabled:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     move v0, v2
 
-    :goto_1
+    :goto_2
     goto :goto_0
 
-    :cond_3
+    :cond_2
     move v0, v1
+
+    goto :goto_2
+
+    :cond_3
+    move v1, v2
 
     goto :goto_1
 .end method
@@ -401,13 +390,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "isGpsEnabled="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->isGpsEnabled:Z
 
@@ -439,13 +424,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "isVerizonLbsEnabled="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->isVerizonLbsEnabled:Z
 

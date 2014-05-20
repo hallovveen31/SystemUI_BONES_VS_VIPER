@@ -192,6 +192,7 @@
     <string name="quick_settings_volume">볼륨</string>
     <string name="quick_settings_usage">데이터 사용</string>
     <string name="quick_settings_sync_all">모두 동기화</string>
+    <string name="quick_settings_ringtone">벨소리</string>
     <string name="quick_settings_auto_sync">자동 동기화</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">사용자 카드</string>
@@ -330,5 +331,4 @@
 -진동 피드백 끄기.
 -화면이 꺼질 때 데이터 연결 끄기.
 -필수 앱들만 실행 허용."</string>
-    <string name="quick_settings_ringtone">벨소리</string>
 </resources>

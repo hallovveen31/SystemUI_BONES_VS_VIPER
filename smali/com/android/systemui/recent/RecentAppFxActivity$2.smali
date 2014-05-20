@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/recent/RecentAppFxActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/recent/RecentAppFxActivity;-><init>()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -40,7 +40,7 @@
     iget-object v0, p0, Lcom/android/systemui/recent/RecentAppFxActivity$2;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->phoneWindow:Landroid/view/Window;
-    invoke-static {v0}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$200(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
+    invoke-static {v0}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$6(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
 
     move-result-object v0
 
@@ -49,7 +49,7 @@
     iget-object v0, p0, Lcom/android/systemui/recent/RecentAppFxActivity$2;->this$0:Lcom/android/systemui/recent/RecentAppFxActivity;
 
     #getter for: Lcom/android/systemui/recent/RecentAppFxActivity;->phoneWindow:Landroid/view/Window;
-    invoke-static {v0}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$200(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
+    invoke-static {v0}, Lcom/android/systemui/recent/RecentAppFxActivity;->access$6(Lcom/android/systemui/recent/RecentAppFxActivity;)Landroid/view/Window;
 
     move-result-object v0
 

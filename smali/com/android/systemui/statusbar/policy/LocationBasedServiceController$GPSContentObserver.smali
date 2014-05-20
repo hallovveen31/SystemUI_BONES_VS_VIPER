@@ -47,12 +47,12 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController$GPSContentObserver;->this$0:Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;
 
     #calls: Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->updateValue()V
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$200(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$0(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController$GPSContentObserver;->this$0:Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;
 
     #calls: Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->updateIcon()V
-    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$300(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;->access$1(Lcom/android/systemui/statusbar/policy/LocationBasedServiceController;)V
 
     return-void
 .end method

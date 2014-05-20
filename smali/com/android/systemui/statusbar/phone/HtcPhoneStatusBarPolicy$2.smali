@@ -40,13 +40,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string v2, "FeliCa onReceive, action="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -57,7 +53,7 @@
     move-result-object v1
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->printLog(Ljava/lang/String;)V
-    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$000(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$0(Ljava/lang/String;)V
 
     const-string v1, "com.htc.intent.action.FELICA_LOCK"
 
@@ -70,7 +66,7 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy$2;->this$0:Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;
 
     #calls: Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->updateFelicaLock(Landroid/content/Intent;)V
-    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$900(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
+    invoke-static {v1, p2}, Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;->access$9(Lcom/android/systemui/statusbar/phone/HtcPhoneStatusBarPolicy;Landroid/content/Intent;)V
 
     :cond_0
     return-void

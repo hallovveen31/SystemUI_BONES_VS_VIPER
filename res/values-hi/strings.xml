@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">वॉल्यूम</string>
     <string name="quick_settings_usage">डेटा उपयोग</string>
     <string name="quick_settings_sync_all">सभी को समन्वयित करें</string>
+    <string name="quick_settings_ringtone">रिंगटोन</string>
     <string name="quick_settings_auto_sync">स्वतः समन्वयन</string>
     <string name="quick_settings_bluetooth">ब्लुटूथ</string>
     <string name="quick_settings_user_card">उपयोगकर्ता कार्ड</string>
@@ -328,5 +329,4 @@
 -कंपन फ़ीडबैक बंद करना।
 -स्क्रीन बंद रहने के दौरान डेटा कनेक्शन बंद करना।
 -केवल जरूरी एप्लिकेशन चलने देना।"</string>
-    <string name="quick_settings_ringtone">रिंगटोन</string>
 </resources>

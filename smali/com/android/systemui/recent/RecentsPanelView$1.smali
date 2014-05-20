@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/recent/RecentsPanelView$1;->this$0:Lcom/android/systemui/recent/RecentsPanelView;
 
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {v0}, Lcom/android/systemui/recent/RecentsPanelView;->invalidate()V
 
     return-void
 .end method

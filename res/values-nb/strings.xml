@@ -190,6 +190,7 @@ være overvåket"</string>
     <string name="quick_settings_volume">Volum</string>
     <string name="quick_settings_usage">Dataforbruk</string>
     <string name="quick_settings_sync_all">Synkroniser alle</string>
+    <string name="quick_settings_ringtone">Ringetone</string>
     <string name="quick_settings_auto_sync">Autosynk</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Brukerkort</string>
@@ -328,5 +329,4 @@ være overvåket"</string>
 -Slå av vibrasjonstilbakemelding.
 -Slå av datatilkobling når skjermen er av.
 -Bare tillate viktige apper å kjøre."</string>
-    <string name="quick_settings_ringtone">Ringetone</string>
 </resources>

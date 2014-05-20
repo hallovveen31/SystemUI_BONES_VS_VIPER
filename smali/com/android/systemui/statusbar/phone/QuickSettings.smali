@@ -96,6 +96,8 @@
 
 .field private themeReceiver:Landroid/content/BroadcastReceiver;
 
+.field private unload:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -217,7 +219,7 @@
 
     const/16 v1, 0x12
 
-    const-string v2, "flashlight"
+    const-string v2, "ringtone"
 
     aput-object v2, v0, v1
 
@@ -396,6 +398,10 @@
     const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->unload:Z
 
     sget-boolean v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEBUG_flag:Z
 
@@ -1329,7 +1335,7 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     :cond_11
-    const-string v32, "flashlight"
+    const-string v32, "ringtone"
 
     move-object/from16 v0, p0
 
@@ -1347,7 +1353,7 @@
 
     if-nez p5, :cond_2d
 
-    const v13, 0x7f04001d
+    const v13, 0x7f040041
 
     :goto_10
     const/16 v32, 0x0
@@ -1976,7 +1982,7 @@
     goto/16 :goto_f
 
     :cond_2d
-    const v13, 0x7f04001e
+    const v13, 0x7f040042
 
     goto/16 :goto_10
 
@@ -2046,47 +2052,38 @@
 
     const/16 v5, 0x1e
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x1
+
+    const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
     array-length v2, p0
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_1
 
     :cond_0
-    sget-boolean v2, Lcom/android/systemui/statusbar/StatusBarFlag;->SUPPORT_QS_EXPS_MODE:Z
-
-    if-ne v2, v1, :cond_1
-
     new-array p0, v1, [I
 
     aput v5, p0, v0
 
-    :cond_1
     :goto_0
     return-object p0
 
-    :cond_2
-    sget-boolean v2, Lcom/android/systemui/statusbar/StatusBarFlag;->SUPPORT_QS_EXPS_MODE:Z
-
-    if-ne v2, v1, :cond_1
-
+    :cond_1
     array-length v3, p0
 
     move v2, v0
 
     :goto_1
-    if-ge v2, v3, :cond_5
+    if-ge v2, v3, :cond_4
 
     aget v4, p0, v2
 
-    if-ne v4, v5, :cond_4
+    if-ne v4, v5, :cond_3
 
     :goto_2
-    if-ne v0, v1, :cond_3
+    if-ne v0, v1, :cond_2
 
     array-length v1, p0
 
@@ -2102,7 +2099,7 @@
 
     aput v5, p0, v1
 
-    :cond_3
+    :cond_2
     const-string v1, "QuickSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2127,12 +2124,12 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     move v0, v1
 
     goto :goto_2
@@ -2633,11 +2630,11 @@
     goto/16 :goto_1
 
     :pswitch_13
-    invoke-static {p0}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingFlashlight;->getQSItemName(Landroid/content/res/Resources;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone;->getQSItemName(Landroid/content/res/Resources;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingFlashlight;->getQSIconID()I
+    invoke-static {}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingRingtone;->getQSIconID()I
 
     move-result v0
 
@@ -3499,9 +3496,9 @@
 .end method
 
 .method private refreshQSSettingConfiguration([I)[I
-    .locals 12
+    .locals 11
 
-    const/16 v11, 0x17
+    const/16 v10, 0x17
 
     const/16 v4, 0x9
 
@@ -3527,10 +3524,10 @@
 
     if-nez v0, :cond_7
 
-    move v7, v1
+    move v6, v1
 
     :goto_0
-    if-ne v7, v1, :cond_0
+    if-ne v6, v1, :cond_0
 
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/QuickSettings;->US_SKU:Z
 
@@ -3542,21 +3539,21 @@
 
     const-string v0, "quick_setting_items_order"
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    invoke-static {v3, v0, v6}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v3, v0, v7}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     const-string v0, "quick_setting_items_order_invisible"
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    invoke-static {v3, v0, v6}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v3, v0, v7}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     const-string v0, "QuickSettings"
 
-    const-string v6, "initialQSConfiguration(content):force reset the visible/invisible as null!!"
+    const-string v7, "initialQSConfiguration(content):force reset the visible/invisible as null!!"
 
-    invoke-static {v0, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     const-string v0, "quick_setting_items_order_invisible"
@@ -3570,22 +3567,22 @@
     move v0, v1
 
     :goto_1
-    const-string v6, "quick_setting_items_order"
+    const-string v7, "quick_setting_items_order"
 
-    invoke-static {v3, v6}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v7}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    if-eqz v8, :cond_1
+    if-eqz v7, :cond_1
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_f
 
     :cond_1
     invoke-static {}, Lcom/android/systemui/CustomizationUtil;->getReader()Lcom/htc/customization/HtcCustomizationReader;
 
-    move-result-object v6
+    move-result-object v8
 
-    if-nez v6, :cond_9
+    if-nez v8, :cond_9
 
     sget-object v3, Lcom/android/systemui/statusbar/phone/QuickSettings;->QS_DEFAULT:[I
 
@@ -3604,46 +3601,42 @@
 
     if-ne v9, v1, :cond_4
 
-    array-length v9, v3
+    array-length v1, v3
 
-    const/16 v10, 0xc
+    const/16 v9, 0xc
 
-    if-ge v9, v10, :cond_a
+    if-ge v1, v9, :cond_a
 
-    array-length v4, v3
+    array-length v1, v3
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-static {v3, v4}, Ljava/util/Arrays;->copyOf([II)[I
+    invoke-static {v3, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
     move-result-object v3
 
-    array-length v4, v3
+    array-length v1, v3
 
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    aput v11, v3, v4
+    aput v10, v3, v1
 
-    const-string v4, "QuickSettings"
+    const-string v1, "QuickSettings"
 
-    const-string v6, "initialQSConfiguration(save):insert additional finger print item!"
+    const-string v4, "initialQSConfiguration(save):insert additional finger print item!"
 
-    invoke-static {v4, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_4
     :goto_3
-    sget-boolean v4, Lcom/android/systemui/statusbar/StatusBarFlag;->SUPPORT_QS_EXPS_MODE:Z
-
-    if-ne v4, v1, :cond_f
-
-    array-length v6, v3
+    array-length v8, v3
 
     move v4, v5
 
     move v1, v5
 
     :goto_4
-    if-ge v2, v6, :cond_d
+    if-ge v2, v8, :cond_c
 
     aget v9, v3, v2
 
@@ -3666,7 +3659,7 @@
     goto :goto_4
 
     :cond_7
-    move v7, v2
+    move v6, v2
 
     goto :goto_0
 
@@ -3680,67 +3673,67 @@
 
     sget-object v9, Lcom/android/systemui/statusbar/phone/QuickSettings;->QS_DEFAULT:[I
 
-    invoke-interface {v6, v3, v9}, Lcom/htc/customization/HtcCustomizationReader;->readIntArray(Ljava/lang/String;[I)[I
+    invoke-interface {v8, v3, v9}, Lcom/htc/customization/HtcCustomizationReader;->readIntArray(Ljava/lang/String;[I)[I
 
     move-result-object v3
 
     goto :goto_2
 
     :cond_a
-    if-eqz v6, :cond_b
+    if-eqz v8, :cond_10
 
-    const-string v9, "quick_setting_replace_fp"
+    const-string v1, "quick_setting_replace_fp"
 
-    invoke-interface {v6, v9, v4}, Lcom/htc/customization/HtcCustomizationReader;->readInteger(Ljava/lang/String;I)I
+    invoke-interface {v8, v1, v4}, Lcom/htc/customization/HtcCustomizationReader;->readInteger(Ljava/lang/String;I)I
 
-    move-result v4
-
-    :cond_b
-    array-length v9, v3
-
-    move v6, v2
+    move-result v1
 
     :goto_5
-    if-ge v6, v9, :cond_4
+    array-length v8, v3
 
-    aget v10, v3, v6
+    move v4, v2
 
-    if-ne v10, v4, :cond_c
+    :goto_6
+    if-ge v4, v8, :cond_4
 
-    const-string v4, "QuickSettings"
+    aget v9, v3, v4
 
-    const-string v9, "initialQSConfiguration(save):replace one item with finger print item!"
+    if-ne v9, v1, :cond_b
 
-    invoke-static {v4, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v1, "QuickSettings"
 
-    aput v11, v3, v6
+    const-string v8, "initialQSConfiguration(save):replace one item with finger print item!"
+
+    invoke-static {v1, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    aput v10, v3, v4
 
     goto :goto_3
 
+    :cond_b
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_6
+
     :cond_c
-    add-int/lit8 v6, v6, 0x1
+    if-eq v1, v5, :cond_d
 
-    goto :goto_5
-
-    :cond_d
-    if-eq v1, v5, :cond_e
-
-    if-ne v4, v5, :cond_e
+    if-ne v4, v5, :cond_d
 
     const/16 v2, 0x1e
 
     aput v2, v3, v1
 
-    :cond_e
+    :cond_d
     const-string v2, "QuickSettings"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "initialQSConfiguration("
+    const-string v8, "initialQSConfiguration("
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
@@ -3770,7 +3763,6 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_f
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->mContext:Landroid/content/Context;
 
     const-string v2, "QuickSettings"
@@ -3781,8 +3773,8 @@
 
     invoke-static {v1, v2, v4, v5, v3}, Lcom/android/systemui/statusbar/phone/QuickSettings;->putSettingRecord(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[I)V
 
-    :cond_10
-    :goto_6
+    :cond_e
+    :goto_7
     const-string v1, "QuickSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3795,7 +3787,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -3831,7 +3823,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -3871,13 +3863,13 @@
 
     return-object v3
 
-    :cond_11
+    :cond_f
     :try_start_0
     const-string v1, "\\["
 
     const-string v3, ""
 
-    invoke-virtual {v8, v1, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v1, v3}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -3903,26 +3895,26 @@
 
     move v1, v2
 
-    :goto_7
-    if-ge v1, v5, :cond_10
+    :goto_8
+    if-ge v1, v5, :cond_e
 
-    aget-object v6, v4, v1
+    aget-object v8, v4, v1
 
-    invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v8
 
-    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v8
 
-    aput v6, v3, v1
+    aput v8, v3, v1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_7
+    goto :goto_8
 
     :catch_0
     move-exception v1
@@ -3955,11 +3947,20 @@
 
     invoke-static {v2, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_6
+    goto/16 :goto_7
+
+    :cond_10
+    move v1, v4
+
+    goto/16 :goto_5
 .end method
 
 .method private refreshQuickSettingConfig([I)V
     .locals 9
+
+    iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->unload:Z
+
+    if-nez v0, :cond_4
 
     sget-object v3, Lcom/android/systemui/statusbar/phone/QuickSettings;->QS_DEFAULT:[I
 
@@ -4057,12 +4058,13 @@
 
     sget-boolean v6, Lcom/android/systemui/statusbar/StatusBarFlag;->SUPPORT_MINOR_QS:Z
 
-    if-nez v6, :cond_4
+    if-nez v6, :cond_5
 
+    :cond_4
     :goto_2
     return-void
 
-    :cond_4
+    :cond_5
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
@@ -4078,7 +4080,7 @@
 
     move-result v6
 
-    if-ge v2, v6, :cond_6
+    if-ge v2, v6, :cond_7
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->qsContent:Ljava/util/ArrayList;
 
@@ -4094,7 +4096,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_5
+    if-nez v6, :cond_6
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->qsContent2:Ljava/util/ArrayList;
 
@@ -4106,7 +4108,7 @@
 
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_5
+    :cond_6
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->qsContent2:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -4115,9 +4117,9 @@
 
     const/4 v7, 0x5
 
-    if-ne v6, v7, :cond_7
+    if-ne v6, v7, :cond_8
 
-    :cond_6
+    :cond_7
     const-string v6, "QuickSettings"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -4148,7 +4150,7 @@
 
     goto :goto_2
 
-    :cond_7
+    :cond_8
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
@@ -4890,6 +4892,34 @@
     return-object v0
 .end method
 
+.method public reload()V
+    .locals 2
+
+    const-string v0, "QuickSettings"
+
+    const-string v1, "reload()"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->unload:Z
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/QuickSettings;->refreshHTCTile(Landroid/view/LayoutInflater;[I)V
+
+    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/QuickSettings;->setupQuickSettings()V
+
+    return-void
+.end method
+
 .method setBar(Lcom/android/systemui/statusbar/phone/PanelBar;)V
     .locals 0
 
@@ -5173,6 +5203,32 @@
     invoke-static {v0, v1, p0}, Lcom/android/systemui/statusbar/quicksetting/QuickSettingUtil;->generateContent(Landroid/content/Context;Landroid/view/ViewGroup;Lcom/android/systemui/statusbar/phone/QuickSettings;)V
 
     goto/16 :goto_0
+.end method
+
+.method public unload()V
+    .locals 2
+
+    const-string v0, "QuickSettings"
+
+    const-string v1, "unload()"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->unload:Z
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QuickSettings;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/QuickSettings;->refreshHTCTile(Landroid/view/LayoutInflater;[I)V
+
+    return-void
 .end method
 
 .method updateResources()V

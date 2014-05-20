@@ -24,7 +24,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;)V
     .locals 0
+    .parameter
 
+    .prologue
+    .line 774
     iput-object p1, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +39,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 9
+    .parameter "view"
 
+    .prologue
+    .line 778
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     #getter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->qs_combine:Ljava/util/ArrayList;
@@ -79,6 +85,7 @@
 
     if-lt v5, v6, :cond_2
 
+    .line 780
     :cond_0
     const-string v5, "QuickSettingReorder"
 
@@ -86,10 +93,12 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 822
     :cond_1
     :goto_0
     return-void
 
+    .line 785
     :cond_2
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
@@ -100,6 +109,7 @@
 
     if-eqz v5, :cond_3
 
+    .line 786
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     #getter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->footerDone:Lcom/htc/widget/HtcFooterButton;
@@ -111,17 +121,23 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    .line 788
     :cond_3
     new-instance v1, Ljava/lang/String;
 
     invoke-direct {v1}, Ljava/lang/String;-><init>()V
 
+    .line 790
+    .local v1, save_string:Ljava/lang/String;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
+    .line 793
+    .local v3, startTime:J
     const/4 v0, 0x0
 
+    .local v0, loop:I
     :goto_1
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
@@ -132,6 +148,7 @@
 
     if-ge v0, v5, :cond_4
 
+    .line 794
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -171,10 +188,12 @@
 
     move-result-object v1
 
+    .line 793
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
+    .line 797
     :cond_4
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
@@ -186,12 +205,14 @@
 
     invoke-static {v5, v6, v1}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
+    .line 799
     const-string v5, "QuickSettingReorder"
 
     const-string v6, "-------------------------------------------------------------------------------------"
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 800
     const-string v5, "QuickSettingReorder"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -230,14 +251,19 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 802
     new-instance v1, Ljava/lang/String;
 
+    .end local v1           #save_string:Ljava/lang/String;
     invoke-direct {v1}, Ljava/lang/String;-><init>()V
 
+    .line 803
+    .restart local v1       #save_string:Ljava/lang/String;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
+    .line 806
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     #getter for: Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;->separatorIndex:I
@@ -258,9 +284,11 @@
 
     move-result v2
 
+    .local v2, size:I
     :goto_2
     if-ge v0, v2, :cond_5
 
+    .line 807
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -300,10 +328,12 @@
 
     move-result-object v1
 
+    .line 806
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
+    .line 810
     :cond_5
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
@@ -315,6 +345,7 @@
 
     invoke-static {v5, v6, v1}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
+    .line 812
     const-string v5, "QuickSettingReorder"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -353,22 +384,26 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 813
     const-string v5, "QuickSettingReorder"
 
     const-string v6, "-------------------------------------------------------------------------------------"
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 816
     const-string v5, "com.android.systemui"
 
     invoke-static {v5}, Landroid/app/backup/BackupManager;->dataChanged(Ljava/lang/String;)V
 
+    .line 818
     const-string v5, "QuickSettingReorder"
 
     const-string v6, "backupManager.dataChange(com.android.systemui)"
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 820
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     invoke-virtual {v5}, Landroid/app/Activity;->isFinishing()Z
@@ -377,6 +412,7 @@
 
     if-nez v5, :cond_1
 
+    .line 821
     iget-object v5, p0, Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity$7;->this$0:Lcom/android/systemui/statusbar/quicksetting/QuickSettingReorderActivity;
 
     invoke-virtual {v5}, Landroid/app/Activity;->finish()V

@@ -190,6 +190,7 @@ Si les torneu a habilitar, pot ser que el proveïdor faci càrrecs addicionals."
     <string name="quick_settings_volume">Volum</string>
     <string name="quick_settings_usage">Ús de dades</string>
     <string name="quick_settings_sync_all">Sincronitza tot</string>
+    <string name="quick_settings_ringtone">So de trucada</string>
     <string name="quick_settings_auto_sync">Sincronització automàtica</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">"Targeta de l'usuari"</string>
@@ -328,5 +329,4 @@ Si les torneu a habilitar, pot ser que el proveïdor faci càrrecs addicionals."
 -Desactivant la resposta amb vibracions.
 -Desactivant la connexió de dades mentre la pantalla està apagada.
 -Permetent que només s'executin les aplicacions essencials."</string>
-    <string name="quick_settings_ringtone">So de trucada</string>
 </resources>

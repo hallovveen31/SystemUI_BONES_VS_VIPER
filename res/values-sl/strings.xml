@@ -190,6 +190,7 @@ morda nadzorovano"</string>
     <string name="quick_settings_volume">Glasnost</string>
     <string name="quick_settings_usage">Uporaba podatkov</string>
     <string name="quick_settings_sync_all">Sinhroniziraj vse</string>
+    <string name="quick_settings_ringtone">Ton zvonjenja</string>
     <string name="quick_settings_auto_sync">Samodejna sinhronizacija</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Kartica uporabnika</string>
@@ -328,5 +329,4 @@ morda nadzorovano"</string>
 -Izklopom povratnega odziva z vibriranjem.
 -Izklopom podatkovne povezave pri izklopljenem zaslonu.
 -Dovoljenjem za izvajanje samo nujnih aplikacij."</string>
-    <string name="quick_settings_ringtone">Ton zvonjenja</string>
 </resources>

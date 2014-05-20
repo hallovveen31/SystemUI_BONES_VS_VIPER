@@ -190,6 +190,7 @@
     <string name="quick_settings_volume">Όγκος</string>
     <string name="quick_settings_usage">Χρήση δεδομένων</string>
     <string name="quick_settings_sync_all">Συγχρονισμός όλων</string>
+    <string name="quick_settings_ringtone">Κουδούνισμα</string>
     <string name="quick_settings_auto_sync">Αυτόματος συγχρονισμός</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_user_card">Κάρτα χρήστη</string>
@@ -328,5 +329,4 @@
 -Απενεργοποίηση ανάδρασης με δόνηση.
 -Απενεργοποίηση σύνδεσης δεδομένων όταν η οθόνη είναι σβηστή.
 -Επιτρέπεται η εκτέλεση μόνο σημαντικών εφαρμογών."</string>
-    <string name="quick_settings_ringtone">Κουδούνισμα</string>
 </resources>

@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/CarrierLabel;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/CarrierLabel;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,16 +18,20 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/android/systemui/statusbar/phone/CarrierLabel;
+.field final this$0:Lcom/android/systemui/statusbar/phone/CarrierLabel;
+
+.field final synthetic this$0$:Lcom/android/systemui/statusbar/phone/CarrierLabel;
 
 
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/CarrierLabel;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/CarrierLabel$3;->this$0:Lcom/android/systemui/statusbar/phone/CarrierLabel;
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/CarrierLabel$3;->this$0$:Lcom/android/systemui/statusbar/phone/CarrierLabel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/android/systemui/statusbar/phone/CarrierLabel$3;->this$0:Lcom/android/systemui/statusbar/phone/CarrierLabel;
 
     return-void
 .end method
@@ -50,9 +54,9 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/CarrierLabel;->access$1102(Z)Z
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/CarrierLabel;->access$11(Z)V
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CarrierLabel$3;->this$0:Lcom/android/systemui/statusbar/phone/CarrierLabel;
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/CarrierLabel$3;->this$0$:Lcom/android/systemui/statusbar/phone/CarrierLabel;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/CarrierLabel;->updateNetworkNameExt()V
 
