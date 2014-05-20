@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="toast_rotation_locked">Hazırda ekran landşaft orientasiyasında kilidlənib.</string>
+    <item type="string" name="APKTOOL_DUMMY_0120">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0121">false</item>
+</resources>
